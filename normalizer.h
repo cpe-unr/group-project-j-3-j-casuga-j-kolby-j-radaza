@@ -8,11 +8,18 @@
 
 class Normalizer: public Processor{
 
+int max;
 public:
 
 	void process(int size, unsigned char* metaData);
+	
+	void processStereo(int sizeL, int sizeR, unsigned char* metaDataL, unsigned char* metaDataR);
 
+	Normalizer();
+	Normalizer(int max);
 
+	int getMax();
+	void setMax(int nMax);
 
 };
 #endif //NORMALIZER_H

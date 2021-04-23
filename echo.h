@@ -8,10 +8,19 @@
 
 class Echo: public Processor{
 
+int delay;
+
 public:
 
-	void process(int size, unsigned char* metaData);
+	void processMono(int size, unsigned char* metaData);
+	
+	void processStereo(int sizeL, int sizeR, unsigned char* metaDataL, unsigned char* metaDataR);
 
+	Echo();
+	Echo(int nDelay);
+
+	int getDelay();
+	void setDelay(int nDelay);
 
 };
 #endif //ECHO_H

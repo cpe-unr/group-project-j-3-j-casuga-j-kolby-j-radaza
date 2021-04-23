@@ -1,6 +1,9 @@
 /** @file */
 #include <iostream>
 
+//NOTE: short is used for 16 bit unsigned char is used for 8 bit
+
+
 /**
  * \brief   The function bar.
  *

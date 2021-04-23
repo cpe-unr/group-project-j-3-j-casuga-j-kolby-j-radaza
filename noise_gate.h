@@ -8,11 +8,18 @@
 
 class NoiseGate: public Processor{
 
+double amp;
 public:
 
-	void process(int size, unsigned char* metaData);
+	void processMono(int size, unsigned char* metaData);
+	
+	void processStereo(int sizeL, int sizeR, unsigned char* metaDataL, unsigned char* metaDataR);
 
+	NoiseGate();
+	NoiseGate(double nAmp);
 
+	double getAmp();
+	void setAmp(double nAmp);
 
 };
 #endif //NOISE_GATE_H
