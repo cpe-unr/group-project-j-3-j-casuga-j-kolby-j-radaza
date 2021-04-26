@@ -16,9 +16,7 @@ void NoiseGate::processMono(int size, unsigned char* buffer){
 		if(buffer[i]*amp < 129*amp){
 			 buffer[i] = 128;
 		}
-		if(buffer[i]*amp > 129*amp){
-			 buffer[i] = 128;
-		}
+	
 	}
 }
 
@@ -28,27 +26,38 @@ void NoiseGate::processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsi
 		if(bufferL[i]*amp < 129*amp){
 			 bufferL[i] = 128;
 		}
-		else if(bufferL[i]*amp > 129*amp){
-			 bufferL[i] = 128;
-		}
 	}
 
 	for(int i = 0; i < sizeR-1; i++){
 		if(bufferR[i]*amp < 129*amp){
 			 bufferR[i] = 128;
 		}
-		else if(bufferR[i]*amp > 129*amp){
-			 bufferR[i] = 128;
-		}
+
 	}
 }
 
 void NoiseGate::processMono(int size, short* buffer){
 
+	for(int i = 0; i < size-1; i++){
+		if(buffer[i]*amp < 16385*amp){
+			 buffer[i] = 0;
+		}
+	}
 }
 
 void NoiseGate::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
+	
+	for(int i = 0; i < sizeL-1; i++){
+		if(bufferL[i]*amp < 16385*amp){
+			 bufferL[i] = 0;
+		}
+	}
 
+	for(int i = 0; i < sizeR-1; i++){
+		if(bufferR[i]*amp < 16385*amp){
+			 bufferR[i] = 0;
+		}
+	}
 }
 
 

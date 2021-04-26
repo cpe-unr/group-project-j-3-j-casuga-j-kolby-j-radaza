@@ -53,7 +53,7 @@ void Echo::processMono(int size, short* buffer){
 
 void Echo::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
 
-	for(int i = 0; i < size-1; i++){
+	for(int i = 0; i < sizeL-1; i++){
 		if((bufferL[i]) > 14090){
 		}
 		else{
@@ -61,7 +61,7 @@ void Echo::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
 		}
 	}
 
-	for(int i = 0; i < size-1; i++){
+	for(int i = 0; i < sizeR-1; i++){
 		if((bufferR[i]) > 14090){
 		}
 		else{
