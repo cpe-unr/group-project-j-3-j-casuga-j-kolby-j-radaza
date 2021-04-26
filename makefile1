@@ -1,0 +1,8 @@
+project: main.cpp processorlib.a
+	g++ -std=c++11 main.cpp -o processor -L. -lprocessorlib
+
+
+
+
+clean:
+	rm* .o processor
