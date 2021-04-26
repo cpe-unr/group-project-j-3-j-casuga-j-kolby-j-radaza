@@ -40,9 +40,13 @@ void Echo::processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsigned 
 	}
 }
 
-void Echo::processMono(int size, unsigned short* buffer){}
+void Echo::processMono(int size, unsigned short* buffer){
 
-void Echo::processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR){}
+}
+
+void Echo::processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR){
+
+}
 
 
 int Echo::getDelay(){
