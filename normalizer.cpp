@@ -34,9 +34,9 @@ void Normalizer::processStereo(int sizeL, int sizeR, unsigned char* bufferL, uns
 
 }
 
-void Normalizer::processMono(int size, unsigned short* buffer){}
+void Normalizer::processMono(int size, short* buffer){}
 
-void Normalizer::processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR){}
+void Normalizer::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){}
 
 int Normalizer::getMax(){
 	return max;

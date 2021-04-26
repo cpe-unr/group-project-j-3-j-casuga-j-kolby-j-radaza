@@ -43,11 +43,11 @@ void NoiseGate::processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsi
 	}
 }
 
-void NoiseGate::processMono(int size, unsigned short* buffer){
+void NoiseGate::processMono(int size, short* buffer){
 
 }
 
-void NoiseGate::processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR){
+void NoiseGate::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
 
 }
 

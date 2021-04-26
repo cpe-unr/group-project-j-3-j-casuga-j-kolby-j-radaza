@@ -40,11 +40,34 @@ void Echo::processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsigned 
 	}
 }
 
-void Echo::processMono(int size, unsigned short* buffer){
+void Echo::processMono(int size, short* buffer){
 
+	for(int i = 0; i < size-1; i++){
+		if((buffer[i]) > 14090){
+		}
+		else{
+			buffer[i] = buffer[i] + buffer[i-delay];
+		}
+	}
 }
 
-void Echo::processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR){
+void Echo::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
+
+	for(int i = 0; i < size-1; i++){
+		if((bufferL[i]) > 14090){
+		}
+		else{
+			bufferL[i] = bufferL[i] + bufferL[i-delay];
+		}
+	}
+
+	for(int i = 0; i < size-1; i++){
+		if((bufferR[i]) > 14090){
+		}
+		else{
+			bufferR[i] = bufferL[i] + bufferR[i-delay];
+		}
+	}
 
 }
 

@@ -16,9 +16,9 @@ public:
 	
 	void processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsigned char* bufferR);
 
-	void processMono(int size, unsigned short* buffer);
+	void processMono(int size, short* buffer);
 
-	void processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR);
+	void processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR);
 
 	NoiseGate();
 	NoiseGate(double nAmp);

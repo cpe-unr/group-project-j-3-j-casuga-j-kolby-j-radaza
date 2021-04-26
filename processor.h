@@ -29,7 +29,7 @@ public:
 	 * @param size - The size of the array
 	 * @param buffer - An unsigned char pointer that points to an array, one for Mono audio files
 	 */
-	virtual void processMono(int size, unsigned short* buffer) = 0;
+	virtual void processMono(int size, short* buffer) = 0;
 	
 	/**
 	 * This function is abstrac and virtual to allow child classes to inherit the method to handle 16 Bit Stereo.
@@ -38,7 +38,7 @@ public:
 	 * @param bufferL - An unsigned char pointer that points to the left side array
 	 * @param bufferR - An unsigned char pointer that points to the right side array 
 	 */
-	virtual void processStereo(int sizeL, int sizeR, unsigned short* bufferL, unsigned short* bufferR) = 0;
+	virtual void processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR) = 0;
 
 };
 
