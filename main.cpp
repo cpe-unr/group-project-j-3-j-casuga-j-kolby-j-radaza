@@ -1,6 +1,8 @@
 /** @file */
 #include <iostream>
-
+#include "echo.h"
+#include "noise_gate.h"
+#include "normalizer.h"
 //NOTE: short is used for 16 bit unsigned char is used for 8 bit
 
 
