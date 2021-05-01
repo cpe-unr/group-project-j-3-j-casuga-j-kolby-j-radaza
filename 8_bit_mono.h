@@ -1,12 +1,13 @@
-#ifndef 8_BIT_MONO_H
-#define 8_BIT_MONO_H
-#include "WaveHeader.h"
+#ifndef EIGHT_BIT_MONO
+#define EIGHT_BIT_MONO
+#include <fstream>
+#include "read_file.h"
 
-class 8BitMono : public waveHeader {
+class Mono8Bit : public readFile {
 public:
-	waveHeader fileHeader;
-	unsigned char* buffer;
-	unsigned char* readBuffer(const std::string &fileName);
+	Mono8Bit();
+	~Mono8Bit();
+	unsigned char* readAudio(std::ifstream file);
 };
 
 #endif

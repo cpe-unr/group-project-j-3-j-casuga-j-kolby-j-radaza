@@ -1,5 +1,5 @@
-#ifndef waveHeader_H
-#define waveHeader_H
+#ifndef WAVEHEADER_H
+#define WAVEHEADER_H
 struct waveHeader {
 	char riff_header[4];
 	int wav_size;
@@ -16,8 +16,6 @@ struct waveHeader {
 
 	char data_header[4];
 	int data_bytes;
-private:
-	readHeader(const std::string &fileName);
-}
+};
 #endif
 

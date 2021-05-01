@@ -16,5 +16,15 @@ normalizer.o: normalizer.cpp normalizer.h processor.h
 libprocessor.a: echo.o noise_gate.o normalizer.o
 	ar rcs libprocessor.a echo.o noise_gate.o normalizer.o 
 
+
+
+readfile.o: read_file.h read_file.cpp wave_header.h
+	g++ -std=c++11 -c read_file.cpp
+	
+8bitmono.o: 8_bit_mono.h 8_bit_mono.cpp read_file.h wave_header.h
+	g++ -std=c++11 -c 8_bit_mono.cpp
+
+
+
 clean:
 	rm *.o processor

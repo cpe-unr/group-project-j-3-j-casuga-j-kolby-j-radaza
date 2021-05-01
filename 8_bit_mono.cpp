@@ -1,9 +1,17 @@
+#include <fstream>
 #include "8_bit_mono.h"
 
-8BitMono::8BitMono () {}
-8BitMono::~8BitMono () {}
+Mono8Bit::Mono8Bit () {}
+Mono8Bit::~Mono8Bit () {}
 
-short 8BitMono::readBuffer(const std::string &fileName) {
-
+unsigned char* Mono8Bit::readAudio(std::ifstream file) {
+	unsigned char* buffer[data_bytes];
+	
+	if (file.is_open()) {
+		file.read((char *) buffer, data_bytes);
+//		file.read((char *) buffer, wave_header.data_bytes);
+	}
+	
+	return *buffer;  // gonna need a delete[] buffer later
 }
 

@@ -1,8 +1,8 @@
 #ifndef 8_BIT_STEREO_H
 #define 8_BIT_STEREO_H
-#include "WaveHeader.h"
+#include "read_file.h"
 
-class 8BitStereo : public Sound{
+class 8BitStereo : public readFile{
 public:
 	waveHeader fileHeader;
 	unsigned char* bufferL;
