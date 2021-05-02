@@ -66,10 +66,19 @@ void Normalizer::processMono(int size, short* buffer){
 	}
 	
 	for(int i = 0; i < size-1; i++){
-		if(buffer[i] < max){
-			short sum = 0;
-			sum = max - buffer[i];
-			buffer[i] = sum;
+		if(buffer[i] > 0){
+			if(buffer[i] < max){
+				int sum = 0;
+				sum = max - buffer[i];
+				buffer[i] = sum;
+			}
+		}
+		else if (buffer[i] < 0){
+			if(buffer[i] > -max){
+				int sum = 0;
+				sum = -max - buffer[i];
+				buffer[i] = sum;
+			}
 		}
 	}
 }
@@ -89,18 +98,38 @@ void Normalizer::processStereo(int sizeL, int sizeR, short* bufferL, short* buff
 	}
 
 	for(int i = 0; i < sizeL-1; i++){
-		if(bufferL[i] < max){
-			int sum = 0;
-			sum = max - bufferL[i];
-			bufferL[i] = sum;
+		if(bufferL[i] > 0){		
+			if(bufferL[i] < max){
+				int sum = 0;
+				sum = max - bufferL[i];
+				bufferL[i] = sum;
+			}
 		}
+		else if (bufferL[i] < 0){
+			if(bufferL[i] > -max){
+				int sum = 0;
+				sum = -max - bufferL[i];
+				bufferL[i] = sum;
+			}
+		}
+		
+		
 	}
 
 	for(int i = 0; i < sizeR-1; i++){
-		if(bufferR[i] < max){
-			int sum = 0;
-			sum = max - bufferR[i];
-			bufferR[i] = sum;
+		if(bufferR[i] > 0){
+			if(bufferR[i] < max){
+				int sum = 0;
+				sum = max - bufferR[i];
+				bufferR[i] = sum;
+			}
+		}
+		else if (bufferR[i] < 0){
+			if(bufferR[i] > -max){
+				int sum = 0;
+				sum = -max - bufferR[i];
+				bufferR[i] = sum;
+			}
 		}
 	}
 }
