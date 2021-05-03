@@ -21,9 +21,9 @@ void Echo::processMono(int size, unsigned char* buffer){
 	}
 }
 	
-void Echo::processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsigned char* bufferR){
+void Echo::processStereo(int size, unsigned char* bufferL, unsigned char* bufferR){
 
-	for(int i = 0; i < sizeL-1; i++){
+	for(int i = 0; i < size-1; i++){
 		if((bufferL[i]) > 110){
 		}
 		else{
@@ -31,7 +31,7 @@ void Echo::processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsigned 
 		}
 	}
 
-	for(int i = 0; i < sizeR-1; i++){
+	for(int i = 0; i < size-1; i++){
 		if((bufferR[i]) > 110){
 		}
 		else{
@@ -53,9 +53,9 @@ void Echo::processMono(int size, short* buffer){
 	}
 }
 
-void Echo::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
+void Echo::processStereo(int size, short* bufferL, short* bufferR){
 
-	for(int i = 0; i < sizeL-1; i++){
+	for(int i = 0; i < size-1; i++){
 		if((bufferL[i]) > 14090){
 		}
 		else if ((bufferL[i]) < -14090){
@@ -65,7 +65,7 @@ void Echo::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
 		}
 	}
 
-	for(int i = 0; i < sizeR-1; i++){
+	for(int i = 0; i < size-1; i++){
 		if((bufferR[i]) > 14090){
 		}
 		else if ((bufferR[i]) < -14090){
