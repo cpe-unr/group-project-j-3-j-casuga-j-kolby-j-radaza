@@ -1,17 +1,27 @@
 #include <fstream>
+#include <iostream>
 #include "8_bit_mono.h"
 
 Mono8Bit::Mono8Bit () {}
 Mono8Bit::~Mono8Bit () {}
 
-unsigned char* Mono8Bit::readAudio(std::ifstream file) {
-	unsigned char* buffer[data_bytes];
+unsigned char* Mono8Bit::readAudio(std::ifstream *file) {
+	unsigned char *buffer = new unsigned char[fileHeader.data_bytes];
 	
-	if (file.is_open()) {
-		file.read((char *) buffer, data_bytes);
-//		file.read((char *) buffer, wave_header.data_bytes);
+	if (file->is_open()) {
+		//std::cout << "data bytes in 8 bit mono " << fileHeader.data_bytes << std::endl;
+		file->read((char *) buffer, fileHeader.data_bytes);
+	} else {
+		std::cout << "Failed to read audio data from file." << std::endl;
 	}
 	
-	return *buffer;  // gonna need a delete[] buffer later
+	return buffer;  // gonna need a delete[] buffer later
 }
 
+void writeAudio(std::ofstream file, unsigned char *buffer) {
+	if (file.is_open()) {
+		file << *buffer;
+	} else {
+		std::cout << "Failed to write to file." << std::endl;
+	}
+}

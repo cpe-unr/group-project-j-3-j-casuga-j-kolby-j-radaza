@@ -1,5 +1,6 @@
 #ifndef READ_FILE_H
 #define READ_FILE_H
+#include <fstream>
 #include "wave_header.h"
 
 class readFile : public waveHeader {
@@ -9,7 +10,7 @@ public:
 	waveHeader fileHeader;
 	
 	//int getFileSize(std::ifstream file);
-	void readHeader(std::ifstream file);
+	void readHeader(std::ifstream *file);
 };
 
 #endif

@@ -7,7 +7,8 @@ class Mono8Bit : public readFile {
 public:
 	Mono8Bit();
 	~Mono8Bit();
-	unsigned char* readAudio(std::ifstream file);
+	unsigned char* readAudio(std::ifstream *file);
+	void writeAudio(std::ofstream file, unsigned char* buffer);
 };
 
 #endif

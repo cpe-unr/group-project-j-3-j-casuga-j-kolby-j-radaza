@@ -23,6 +23,12 @@ readfile.o: read_file.h read_file.cpp wave_header.h
 	
 8bitmono.o: 8_bit_mono.h 8_bit_mono.cpp read_file.h wave_header.h
 	g++ -std=c++11 -c 8_bit_mono.cpp
+	
+test.o:
+	g++ -std=c++11 -c test.cpp -o test.o
+	
+test: test.o read_file.o 8_bit_mono.o
+	g++ -std=c++11 test.o read_file.o 8_bit_mono.o -o test
 
 
 
