@@ -1,14 +1,14 @@
 #ifndef EIGHT_BIT_MONO
 #define EIGHT_BIT_MONO
 #include <fstream>
-#include "read_file.h"
+#include "header.h"
 
-class Mono8Bit : public readFile {
+class Mono8Bit : public header {
 public:
 	Mono8Bit();
 	~Mono8Bit();
 	unsigned char* readAudio(std::ifstream *file);
-	void writeAudio(std::ofstream file, unsigned char* buffer);
+	void writeAudio(std::ofstream *file, unsigned char* buffer);
 };
 
 #endif
