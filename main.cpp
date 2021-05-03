@@ -1,8 +1,18 @@
 /** @file */
 #include <iostream>
+#include <fstream>
+#include <string>
+
+
+
 #include "echo.h"
 #include "noise_gate.h"
 #include "normalizer.h"
+#include "Menu.h"
+
+#include "header.h"
+
+#include "8_bit_mono.h"
 //NOTE: short is used for 16 bit unsigned char is used for 8 bit
 
 
@@ -31,6 +41,58 @@ void fn(){
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+	std::string chosenWavFile;
+
+	// Read in the wav files
+	
+	std::string fileName = "waves/yes-8bit-mono.wav";
+	std::ifstream file (fileName, std::ios::binary | std::ios::in);
+	
+	if (file.is_open()) {
+		//
+	} else {
+		std::cout << "Failed to open file in main" <<std::endl;
+	}
+	
+	// read file
+	Mono8Bit test;
+	test.readHeader(&file);
+	unsigned char* buffer = test.readAudio(&file);
+	//std::cout << "buffer in test " << buffer << std::endl;
+	//delete buffer;
+	file.close();
+	
+	
+	// write file
+	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
+	
+	test.writeHeader(&outfile);
+	test.writeAudio(&outfile, buffer);
+	file.close();
+
+	
+    std::cout << " ----- Welcome to the Audio File Management System ----- " << std::endl;
+	std::cout << " Which file are we working with today? (Choose the number corresponding) " << std::endl;
+
+	std::cout << "[1] 8-bit mono" << std::endl;
+	std::cout << "[2] 8-bit stereo" << std::endl;
+	std::cout << "[3] 16-bit mono" << std::endl;
+	std::cout << "[4] 26-bit stereo" << std::endl;
+	
+	int choice = 0;
+
+	std::cout << "Enter choice: "; std::cin >> choice;
+
+	
+	//Menu menu();
+
+
+
+
+
+
+
+
+
     return 0;
 }

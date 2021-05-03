@@ -1,5 +1,5 @@
-project: main.o libprocessor.a
-	g++ -std=c++11 main.o libprocessor.a -o processor
+project: main.o libprocessor.a Menu.h header.o 8_bit_mono.o
+	g++ -std=c++11 main.o libprocessor.a header.o 8_bit_mono.o -o processor
 
 main.o: main.cpp
 	g++ -std=c++11 -c main.cpp
@@ -15,7 +15,6 @@ normalizer.o: normalizer.cpp normalizer.h processor.h
 
 libprocessor.a: echo.o noise_gate.o normalizer.o
 	ar rcs libprocessor.a echo.o noise_gate.o normalizer.o 
-
 
 
 header.o: header.h header.cpp wave_header.h
