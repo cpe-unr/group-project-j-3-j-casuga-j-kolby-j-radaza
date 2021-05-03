@@ -43,16 +43,13 @@ void fn(){
 int main() {
 	std::string chosenWavFile;
 
-	// Read in the wav files
+	//////////////// Read in the wav files
 	
 	std::string fileName = "waves/yes-8bit-mono.wav";
 	std::ifstream file (fileName, std::ios::binary | std::ios::in);
-	
-	if (file.is_open()) {
-		//
-	} else {
+
+	if(!file.is_open())
 		std::cout << "Failed to open file in main" <<std::endl;
-	}
 	
 	// read file
 	Mono8Bit test;
@@ -62,13 +59,16 @@ int main() {
 	//delete buffer;
 	file.close();
 	
-	
 	// write file
+	/**
 	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
 	
 	test.writeHeader(&outfile);
 	test.writeAudio(&outfile, buffer);
 	file.close();
+	**/
+	
+	///////////////
 
 	
     std::cout << " ----- Welcome to the Audio File Management System ----- " << std::endl;
@@ -82,6 +82,27 @@ int main() {
 	int choice = 0;
 
 	std::cout << "Enter choice: "; std::cin >> choice;
+
+
+	// PROCESS FOR ECHO
+	Processor *processorEcho = new NoiseGate(0.5);
+	processorEcho-> processMono(test.data_bytes, buffer);
+
+	//WRITTEN INTO ANOTHER FILE (NEW)
+	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
+	
+	test.writeHeader(&outfile);
+	test.writeAudio(&outfile, buffer);
+	file.close();
+
+	// TESTING ON 8-BIT MONO
+	//ECHO
+
+	
+
+	
+
+
 
 	
 	//Menu menu();
