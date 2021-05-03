@@ -3,14 +3,15 @@
 #include <fstream>
 #include "wave_header.h"
 
-class readFile : public waveHeader {
+class header : public waveHeader {
 public:
-	readFile ();
-	~readFile ();
+	header ();
+	~header ();
 	waveHeader fileHeader;
 	
 	//int getFileSize(std::ifstream file);
 	void readHeader(std::ifstream *file);
+	void writeHeader(std::ofstream *file);
 };
 
 #endif

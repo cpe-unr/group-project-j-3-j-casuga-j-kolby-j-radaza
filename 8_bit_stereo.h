@@ -1,6 +1,6 @@
 #ifndef 8_BIT_STEREO_H
 #define 8_BIT_STEREO_H
-#include "read_file.h"
+#include "header.h"
 
 class 8BitStereo : public readFile{
 public:

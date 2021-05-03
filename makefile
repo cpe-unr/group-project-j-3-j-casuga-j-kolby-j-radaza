@@ -18,19 +18,19 @@ libprocessor.a: echo.o noise_gate.o normalizer.o
 
 
 
-readfile.o: read_file.h read_file.cpp wave_header.h
-	g++ -std=c++11 -c read_file.cpp
+header.o: header.h header.cpp wave_header.h
+	g++ -std=c++11 -c header.cpp
 	
-8bitmono.o: 8_bit_mono.h 8_bit_mono.cpp read_file.h wave_header.h
+8bitmono.o: 8_bit_mono.h 8_bit_mono.cpp header.h wave_header.h
 	g++ -std=c++11 -c 8_bit_mono.cpp
 	
 test.o:
 	g++ -std=c++11 -c test.cpp -o test.o
 	
-test: test.o read_file.o 8_bit_mono.o
-	g++ -std=c++11 test.o read_file.o 8_bit_mono.o -o test
+test: test.o header.o 8_bit_mono.o
+	g++ -std=c++11 test.o header.o 8_bit_mono.o -o test
 
 
 
 clean:
-	rm *.o processor
+	rm *.o processor test
