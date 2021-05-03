@@ -71,7 +71,8 @@ void Echo::processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR){
 		else if ((bufferR[i]) < -14090){
 		}
 		else{
-			bufferR[i] = bufferL[i] + bufferR[i-delay];
+			bufferR[i] = bufferR[i] + bufferR[i-delay];
+		
 		}
 	}
 
