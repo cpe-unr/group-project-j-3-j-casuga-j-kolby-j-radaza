@@ -32,7 +32,7 @@ public:
 	virtual void processMono(int size, short* buffer) = 0;
 	
 	/**
-	 * This function is abstrac and virtual to allow child classes to inherit the method to handle 16 Bit Stereo.
+	 * This function is abstract and virtual to allow child classes to inherit the method to handle 16 Bit Stereo.
 	 * @param sizeL - The size of the left side array
 	 * @param sizeR - The size of the right side array
 	 * @param bufferL - An unsigned char pointer that points to the left side array
