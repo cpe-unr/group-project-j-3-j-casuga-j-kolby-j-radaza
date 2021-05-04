@@ -11,7 +11,7 @@ Echo::Echo(int nDelay){
 }
 
 void Echo::processMono(int size, unsigned char* buffer){
-
+ 
 	for(int i = 0; i < size-1; i++){
 		if((buffer[i]) > 110){
 		}
