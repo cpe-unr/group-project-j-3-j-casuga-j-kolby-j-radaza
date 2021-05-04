@@ -6,6 +6,7 @@
 #include "16_bit_mono.h"
 #include "16_bit_stereo.h"
 #include "header.h"
+#include "metadata_io.h"
 
 int main() {
 // 8 bit mono
@@ -123,10 +124,16 @@ int main() {
 	std::cout << "bufferL in test " << *bufferL << std::endl;
 	//std::cout << "bufferR in test " << bufferR << std::endl;
 	//std::cout << "data_bytes " << test.data_bytes << " # of channels " << test.num_channels << std::endl;
+	
+	// read metadata *note metadata is at the end of the file and should be read last*
+	test.readMetadata(&file);
+	std::cout << "Metadata " << test.inam << std::endl;
+	
 	file.close();
 	
 	
 	// write file
+	/*
 	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
 	
 	test.writeHeader(&outfile);
@@ -135,5 +142,6 @@ int main() {
 	file.close();
 	delete bufferL;
 	delete bufferR;
+	*/
 }
 

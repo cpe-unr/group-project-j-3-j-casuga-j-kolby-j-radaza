@@ -21,5 +21,6 @@ struct waveHeader {
 	char data_header[4];
 	int data_bytes;
 };
+
 #endif //WAVEHEADER_H
 
