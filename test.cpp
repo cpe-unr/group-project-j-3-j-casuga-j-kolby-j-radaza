@@ -159,7 +159,7 @@ int main() {
 	file.close();
 	delete bufferL;
 	delete bufferR;
-	
+	/*
 	CSV csv1;
 	std::string file1;
 	std::cout << "CSV File name: "; std::cin >> file1;
@@ -183,5 +183,6 @@ int main() {
 	std::cout << "CSV File name: "; std::cin >> file4;
 	metadataIO io4;
 	csv.writeCSV(file4, &stereo_16_origin, stereo_16_wavFile, io4);
+	*/
 }
 

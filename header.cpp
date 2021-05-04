@@ -9,18 +9,6 @@ header::header () {}
 header::~header () {}
 
 void header::readHeader(std::ifstream *file) {
-/*
-	if (file->is_open()) {
-		//for (int i = 0; i < (sizeof(fileHeader)/4); i++) {
-			file->read(fileHeader.riff_header, 4);
-			char test[1024];
-			file->read(test, 1024);
-			//std::cout << "test " << fileHeader.riff_header << " end\n" << std::endl;
-		//}
-	} else {
-		std::cout << "Cannot write file header" << std::endl;
-	}
-*/
 	if (file->is_open()) {
 		file->read((char *) &fileHeader, sizeof(fileHeader));
 	} else {
@@ -43,17 +31,43 @@ metadataIO::metadataIO () {}
 metadataIO::~metadataIO () {}
 
 void metadataIO::readMetadata(std::ifstream *file) {
-	if (file->is_open()) {
+	if (file->is_open() && 0) {
+		char * tag = new char [4];
+		int bytesRead = 2;
+		
+		do {
+			bytesRead ++;
+			file->read((char *) tag, 4);
+			std::string s;
+			s.push_back(*tag);
+			if (s.find("I") != std::string::npos) {
+				std::cout << "------------" << std::endl;
+				break;
+			}
+			if (bytesRead == 2000000) {
+				break;
+			}
+		} while (tag != NULL);
+		delete tag;
+		
 		file->read((char *) &Metadata, sizeof(Metadata));
-		//std::cout << "in the meta " << Metadata.inam << " end" << std::endl;
+		std::cout << "in the meta " << Metadata.inam << " end" << std::endl;
+		
 	} else {
+		if (file->is_open()) {
+			file->read((char *) &Metadata, sizeof(Metadata));
+			//std::cout << "in the meta " << Metadata.inam << " end" << std::endl;
+		} else {
+			std::cout << "Failed to read metadata from file" <<std::endl;
+		}
+	
 		std::cout << "Failed to read metadata from file" <<std::endl;
 	}
 }
 
 void metadataIO::writeMetadata(std::ofstream *file) {
 	if (file->is_open()) {
-		file->write((char *)&Metadata, sizeof(Metadata));
+		//file->write((char *)&Metadata, sizeof(Metadata));
 	} else {
 		std::cout << "Cannot write metadata to file" << std::endl;
 	}
