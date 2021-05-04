@@ -23,17 +23,44 @@ private:
 
 	std::string name;
 	std::string user_processes;
-	//T number;
 
 public:
-	//Menu();
+	/**
+	* This is the constructor of the Menu Class
+	* @param *newWavFile - This is a templetized parameter. It is the audio wave file that we obtain from reading in the sound files
+	* @param newName - contains the name of the audio file
+	* @param newBuffer - This is a templetized parameter. This holds the buffer of the wav file
+	*/
 	Menu(T *newWavFile, std::string newName, U newBuffer);
+
+	/**
+	* This is the constructor of the Menu Class
+	* @param *newWavFile - This is a templetized parameter. It is the audio wave file that we obtain from reading in the sound files
+	* @param newName - contains the name of the audio file
+	* @param newBufferL - This is a templetized parameter. This holds the left buffer of the stereo wav file
+	* @param newBufferL - This is a templetized parameter. This holds the right buffer of the stereo wav file
+	*/
 	Menu(T *newWavFile, std::string newName, L newBufferL, R newBufferR);
+
+	/**
+	* This function delegates which processors to use depending on the user's choice
+	*/
 
 	void processFile();
 
+	/**
+	* This function handles the echo processing of different wav files
+	*/
 	void echoProcessor();
+
+	/**
+	* This function handles the noise gate processing of different wav files
+	*/
 	void noise_gateProcessor();
+
+	/**
+	* This function handles the normalizer processing of different wav files
+	*/
 	void normalizerProcessor();
 
 
@@ -41,50 +68,53 @@ public:
 
 };
 
+
 template <class T, class U, class L, class R>
 void Menu<T, U, L, R>::echoProcessor() {
 	if (name == "8-bit mono wav file" || name == "16-bit mono wav file") {
 		Processor *processorEcho = new Echo(15);
 		processorEcho-> processMono(wavFile.fileHeader.data_bytes, buffer);
-		std::cout << "SUCCESS ECHO "<< name << std::endl;
+		std::cout << "SUCCESS ECHO " << name << std::endl;
 	}
 
 	if (name == "8-bit stereo wav file" || name == "16-bit stereo wav file") {
 		Processor *processorEcho = new Echo(15);
 		processorEcho -> processStereo(wavFile.fileHeader.data_bytes, bufferL, bufferR);
-		std::cout << "SUCCESS ECHO "<< name << std::endl;
+		std::cout << "SUCCESS ECHO " << name << std::endl;
 	}
 
 };
+
 
 template <class T, class U, class L, class R>
 void Menu<T, U, L, R>::noise_gateProcessor() {
 	if (name == "8-bit mono wav file" || name == "16-bit mono wav file") {
 		Processor *processorEcho = new NoiseGate(0.05);
 		processorEcho-> processMono(wavFile.fileHeader.data_bytes, buffer);
-		std::cout << "SUCCESS NOISE GATE "<< name << std::endl;
+		std::cout << "SUCCESS NOISE GATE " << name << std::endl;
 	}
 
 	if (name == "8-bit stereo wav file" || name == "16-bit stereo wav file") {
 		Processor *processorEcho = new NoiseGate(0.05);
 		processorEcho -> processStereo(wavFile.fileHeader.data_bytes, bufferL, bufferR);
-		std::cout << "SUCCESS NOISE GATE "<< name << std::endl;
+		std::cout << "SUCCESS NOISE GATE " << name << std::endl;
 	}
 
 };
+
 
 template <class T, class U, class L, class R>
 void Menu<T, U, L, R>::normalizerProcessor() {
 	if (name == "8-bit mono wav file" || name == "16-bit mono wav file") {
 		Processor *processorEcho = new Normalizer();
 		processorEcho-> processMono(wavFile.fileHeader.data_bytes, buffer);
-		std::cout << "SUCCESS NORMALIZER "<< name << std::endl;
+		std::cout << "SUCCESS NORMALIZER " << name << std::endl;
 	}
 
 	if (name == "8-bit stereo wav file" || name == "16-bit stereo wav file") {
 		Processor *processorEcho = new Normalizer();
 		processorEcho -> processStereo(wavFile.fileHeader.data_bytes, bufferL, bufferR);
-		std::cout << "SUCCESS NORMALIZER "<< name << std::endl;
+		std::cout << "SUCCESS NORMALIZER " << name << std::endl;
 	}
 };
 
@@ -109,41 +139,29 @@ void Menu<T, U, L, R>::processFile() {
 
 	while ( is >> x ) v.push_back( x );
 
-	std::string processes = "You have chosen the following processors: ";
+	std::string processes = "You have chosen the following processors: \n";
 
 	for (int x : v) {
 		if (x == 1)
-			processes += "Echo Processor,";
-		if (x == 2) 
-			processes += "Noise Gate Processor,";
-		if (x == 3) 
-			processes += "Normalizer Processor";
+			processes += "- Echo Processor \n";
+		if (x == 2)
+			processes += "- Noise Gate Processor \n";
+		if (x == 3)
+			processes += "- Normalizer Processor \n";
 	}
 
 	std::cout << processes << std::endl;
 
 	for (int x : v) {
-		if (x == 1) {
+		if (x == 1)
 			echoProcessor();
-			//std::cout << "Chosen Echo Processor" << std::endl;
-		}
-
-		if (x == 2) {
+		if (x == 2)
 			noise_gateProcessor();
-			//std::cout << "Chosen Noise Gate Processor" << std::endl;
-		}
-		if (x == 3) {
+		if (x == 3)
 			normalizerProcessor();
-			//std::cout << "Chosen Normalizer Processor" << std::endl;
-		}
-
 	}
-
-	std::cout << user_processes << std::endl;
-
-
-
 };
+
 
 
 template <class T, class U, class L, class R>
@@ -157,12 +175,14 @@ Menu<T, U, L, R>::Menu(T *newWavFile, std::string newName, U newBuffer) : wavFil
 
 	int choice = 0;
 	std::cout << "Enter choice: "; std::cin >> choice;
+	system("clear");
 
 	if (choice == 2) {
 		processFile();
 	}
 
 }
+
 
 template <class T, class U, class L, class R>
 Menu<T, U, L, R>::Menu(T *newWavFile, std::string newName, L newBufferL, R newBufferR) : wavFile(*newWavFile), name(newName), bufferL(newBufferL), bufferR(newBufferR) {
@@ -175,10 +195,10 @@ Menu<T, U, L, R>::Menu(T *newWavFile, std::string newName, L newBufferL, R newBu
 
 	int choice = 0;
 	std::cout << "Enter choice: "; std::cin >> choice;
+	system("clear");
 
 	if (choice == 2) {
 		processFile();
 	}
 
 }
-#include "Menu.cpp"
