@@ -13,6 +13,7 @@
 #include "header.h"
 
 #include "8_bit_mono.h"
+#include "8_bit_stereo.h"
 //NOTE: short is used for 16 bit unsigned char is used for 8 bit
 
 
@@ -68,19 +69,33 @@ int main() {
 	unsigned char*  mono_8_buffer = mono_8_wavFile.readAudio(&mono_8_origin);
 	mono_8_origin.close();
 
+
+
+
+
 	/**
 	*	This reads in the 8-bit stereo wav file
 	*/
+	std::string stereo_8_name = "8-bit stereo wav file";
 	std::string stereo_8_fileName = "waves/yes-8-bit-stereo.wav";
 	std::ifstream stereo_8_origin (stereo_8_fileName, std::ios::binary | std::ios::in);
 
 	if (!stereo_8_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit stereo_8_wavFile;
+	Stereo8Bit stereo_8_wavFile;
 	stereo_8_wavFile.readHeader(&stereo_8_origin);
-	unsigned char* stereo_8_buffer = stereo_8_wavFile.readAudio(&stereo_8_origin);
+	unsigned char *stereo_8_buffer_L = new unsigned char[stereo_8_wavFile.fileHeader.data_bytes];
+	unsigned char *stereo_8_buffer_R = new unsigned char[stereo_8_wavFile.fileHeader.data_bytes];
+
+	stereo_8_wavFile.readAudio(&stereo_8_origin, stereo_8_buffer_L, stereo_8_buffer_R);
+
 	stereo_8_origin.close();
+
+
+
+
+
 
 	/**
 	*	This reads in the 16-bit mono wav file
@@ -137,17 +152,16 @@ int main() {
 
 		// 8-bit MONO
 		case 1:{
-			Menu<Mono8Bit> menu(&mono_8_wavFile,mono_8_name);
-			//std::string answer = menu.processFile();
-
+			Menu<Mono8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&mono_8_wavFile,mono_8_name, mono_8_buffer);
+			Processor *processorEcho = new Echo(15);
+			processorEcho-> processMono(10, mono_8_buffer);
 			break;
 		}
-			
 
-
-
-		case 2:
+		case 2:{
+			//Menu<Stereo8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&stereo_8_wavFile,stereo_8_name, stereo_8_buffer_L, stereo_8_buffer_R);
 			break;
+		}
 
 
 
@@ -227,7 +241,7 @@ int main() {
 	/**
 
 	    
-	processorEcho-> processMono(test.data_bytes, buffer);
+	
 
 	//WRITTEN INTO ANOTHER FILE (NEW)
 	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
