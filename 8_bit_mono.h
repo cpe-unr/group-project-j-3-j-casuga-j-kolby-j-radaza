@@ -31,6 +31,7 @@ public:
 	 * @param *buffer - The unsigned char* array of audio data.
 	 */
 	void writeAudio(std::ofstream *file, unsigned char* buffer);
+
 };
 
 #endif

@@ -39,6 +39,13 @@
 void fn() {
 
 }
+/** TEMPLETIZED FUNCTION for reading in all the audioFiles (separately)
+
+template <typename T>
+void readWavFile(std::string fileName,T audioClass){
+
+}
+**/
 
 
 int main() {
@@ -49,61 +56,62 @@ int main() {
 	/**
 	*	This reads in the 8-bit mono wav file
 	*/
-	std::string fileName1 = "waves/yes-8bit-mono.wav";
-	std::ifstream file1 (fileName1, std::ios::binary | std::ios::in);
+	std::string mono_8_name = "8-bit mono wav file";
+	std::string mono_8_fileName = "waves/yes-8-bit-mono.wav";
+	std::ifstream mono_8_origin (mono_8_fileName, std::ios::binary | std::ios::in);
 
-	if (!file1.is_open())
+	if (!mono_8_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit test1;
-	test1.readHeader(&file1);
-	unsigned char* buffer1 = test1.readAudio(&file1);
-	file1.close();
-
+	Mono8Bit mono_8_wavFile;
+	mono_8_wavFile.readHeader(&mono_8_origin);
+	unsigned char*  mono_8_buffer = mono_8_wavFile.readAudio(&mono_8_origin);
+	mono_8_origin.close();
 
 	/**
 	*	This reads in the 8-bit stereo wav file
 	*/
-	std::string fileName2 = "waves/yes-8-bit-stereo.wav";
-	std::ifstream file2 (fileName2, std::ios::binary | std::ios::in);
+	std::string stereo_8_fileName = "waves/yes-8-bit-stereo.wav";
+	std::ifstream stereo_8_origin (stereo_8_fileName, std::ios::binary | std::ios::in);
 
-	if (!file2.is_open())
+	if (!stereo_8_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit test2;
-	test2.readHeader(&file2);
-	unsigned char* buffer2 = test2.readAudio(&file2);
-	file2.close();
-
+	Mono8Bit stereo_8_wavFile;
+	stereo_8_wavFile.readHeader(&stereo_8_origin);
+	unsigned char* stereo_8_buffer = stereo_8_wavFile.readAudio(&stereo_8_origin);
+	stereo_8_origin.close();
 
 	/**
 	*	This reads in the 16-bit mono wav file
 	*/
-	std::string fileName3 = "waves/yes-8bit-mono.wav";
-	std::ifstream file3 (fileName3, std::ios::binary | std::ios::in);
+	std::string mono_16_fileName = "waves/yes-16-bit-mono.wav";
+	std::ifstream mono_16_origin (mono_16_fileName, std::ios::binary | std::ios::in);
 
-	if (!file3.is_open())
+	if (!mono_16_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit test3;
-	test3.readHeader(&file3);
-	unsigned char* buffer3 = test3.readAudio(&file3);
-	file3.close();
+	Mono8Bit mono_16_wavFile;
+	mono_16_wavFile.readHeader(&mono_16_origin);
+	unsigned char* mono_16_buffer = mono_16_wavFile.readAudio(&mono_16_origin);
+	mono_16_origin.close();
 
 
 	/**
-	*	This reads in the 26-bit stereo wav file
+	*	This reads in the 16-bit stereo wav file
 	*/
-	std::string fileName4 = "waves/yes-8-bit-stereo.wav";
-	std::ifstream file4 (fileName4, std::ios::binary | std::ios::in);
+	std::string stereo_16_fileName = "waves/yes-16-bit-stereo.wav";
+	std::ifstream stereo_16_origin (stereo_16_fileName, std::ios::binary | std::ios::in);
 
-	if (!file4.is_open())
+	if (!stereo_16_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit test4;
-	test4.readHeader(&file4);
-	unsigned char* buffer4 = test4.readAudio(&file4);
-	file4.close();
+	Mono8Bit stereo_16_wavFile;
+	stereo_16_wavFile.readHeader(&stereo_16_origin);
+	unsigned char* buffer4 = stereo_16_wavFile.readAudio(&stereo_16_origin);
+	stereo_16_origin.close();
+	
+
 
 	int choice = 0;
 
@@ -120,6 +128,7 @@ int main() {
 
 
 		std::cout << "Enter choice: "; std::cin >> choice;
+		system("clear");
 
 		switch (choice) {
 		case 0:
@@ -127,10 +136,12 @@ int main() {
 			break;
 
 		// 8-bit MONO
-		case 1:
-			//Menu menu(&buffer1);
+		case 1:{
+			Menu<Mono8Bit> menu(&mono_8_wavFile,mono_8_name);
 
 			break;
+		}
+			
 
 
 
