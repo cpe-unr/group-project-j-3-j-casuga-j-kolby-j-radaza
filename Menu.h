@@ -9,32 +9,50 @@
 #include "echo.h"
 #include "noise_gate.h"
 #include "normalizer.h"
+#include "header.h"
 
-template <class T>
+
+template <class T, class U, class L, class R>
 class Menu {
 
 private:
 	T wavFile;
+	U buffer;
+	L bufferL;
+	R bufferR;
+
 	std::string name;
 	std::string user_processes;
 	//T number;
 
 public:
 	//Menu();
-	Menu(T *newWavFile, std::string newName);
+	Menu(T *newWavFile, std::string newName, U newBuffer);
+	Menu(T *newWavFile, std::string newName, L newBufferL, R newBufferR);
+
 	void processFile();
 
-	void edd() {
-		std::cout << "add func" << std::endl;
+	void echoProcessor();
 
-	};
 
 
 
 };
 
-template <class T>
-void Menu<T>::processFile() {
+template <class T, class U, class L, class R>
+void Menu<T, U, L, R>::echoProcessor() {
+	std::cout << "output" << std::endl;
+	if (name == "8-bit mono wav file") {
+		Processor *processorEcho = new Echo(15);
+
+		//processorEcho-> processMono(wavFile.data_bytes, buffer);
+
+	}
+
+};
+
+template <class T, class U, class L, class R>
+void Menu<T, U, L, R>::processFile() {
 	std::cout << "How would you like to process your audio file?" << std::endl;
 	std::cout << "(Enter the number in order separated by spaces. Example: '1 2 3')" << std::endl;
 
@@ -52,19 +70,26 @@ void Menu<T>::processFile() {
 	int x;
 
 	while ( is >> x ) v.push_back( x );
-	for(int x:v){
-		if(x == 1)
+
+
+
+	for (int x : v) {
+		if (x == 1) {
+			//echoProcessor();
 			std::cout << "Chosen Echo Processor" << std::endl;
-		if(x==2)
+		}
+
+		if (x == 2) {
+
 			std::cout << "Chosen Noise Gate Processor" << std::endl;
-		if(x==3)
+		}
+		if (x == 3) {
+
 			std::cout << "Chosen Normalizer Processor" << std::endl;
+		}
 
 	}
-	/**
-	for ( int x : v) std::cout << x << ' ';
-	std::cout << std::endl;
-	**/
+
 	std::cout << user_processes << std::endl;
 
 
@@ -76,6 +101,7 @@ void Menu<T>::processFile() {
 
 
 /**
+
 void edd() {
 	std::cout << "edd func" << std::endl;
 
@@ -95,8 +121,8 @@ Menu<T>::Menu(T numberS) : number(numberS) {
 **/
 
 
-template <class T>
-Menu<T>::Menu(T *newWavFile, std::string newName) : wavFile(*newWavFile), name(newName) {
+template <class T, class U, class L, class R>
+Menu<T, U, L, R>::Menu(T *newWavFile, std::string newName, U newBuffer) : wavFile(*newWavFile), name(newName), buffer(newBuffer) {
 	std::cout << "You have chosen to work with the " << name << std::endl;
 	std::cout << "What action would you like to take? (Enter the appropriate number)" << std::endl;
 
@@ -113,4 +139,21 @@ Menu<T>::Menu(T *newWavFile, std::string newName) : wavFile(*newWavFile), name(n
 
 }
 
+template <class T, class U, class L, class R>
+Menu<T, U, L, R>::Menu(T *newWavFile, std::string newName, L newBufferL, R newBufferR) : wavFile(*newWavFile), name(newName), bufferL(newBufferL), bufferR(newBufferR) {
+	std::cout << "You have chosen to work with the " << name << std::endl;
+	std::cout << "What action would you like to take? (Enter the appropriate number)" << std::endl;
+
+	std::cout << "[1] Modify Metadata" << std::endl;
+	std::cout << "[2] Process Files" << std::endl;
+	std::cout << "[3] Choose another audio file" << std::endl;
+
+	int choice = 0;
+	std::cout << "Enter choice: "; std::cin >> choice;
+
+	if (choice == 2) {
+		//processFile();
+	}
+
+}
 #include "Menu.cpp"
