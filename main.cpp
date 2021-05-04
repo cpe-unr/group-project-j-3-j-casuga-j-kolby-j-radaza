@@ -14,6 +14,8 @@
 
 #include "8_bit_mono.h"
 #include "8_bit_stereo.h"
+#include "16_bit_mono.h"
+#include "16_bit_stereo.h"
 //NOTE: short is used for 16 bit unsigned char is used for 8 bit
 
 
@@ -96,34 +98,38 @@ int main() {
 
 
 
-
 	/**
 	*	This reads in the 16-bit mono wav file
 	*/
+	std::string mono_16_name = "16-bit mono wav file";
 	std::string mono_16_fileName = "waves/yes-16-bit-mono.wav";
 	std::ifstream mono_16_origin (mono_16_fileName, std::ios::binary | std::ios::in);
 
 	if (!mono_16_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit mono_16_wavFile;
+	Mono16Bit mono_16_wavFile;
 	mono_16_wavFile.readHeader(&mono_16_origin);
-	unsigned char* mono_16_buffer = mono_16_wavFile.readAudio(&mono_16_origin);
+	short *mono_16_buffer = mono_16_wavFile.readAudio(&mono_16_origin);
 	mono_16_origin.close();
 
 
 	/**
 	*	This reads in the 16-bit stereo wav file
 	*/
+	std::string stereo_16_name = "16-bit stereo wav file";
 	std::string stereo_16_fileName = "waves/yes-16-bit-stereo.wav";
 	std::ifstream stereo_16_origin (stereo_16_fileName, std::ios::binary | std::ios::in);
 
 	if (!stereo_16_origin.is_open())
 		std::cout << "Failed to open file in main" << std::endl;
 
-	Mono8Bit stereo_16_wavFile;
+	Stereo16Bit stereo_16_wavFile;
 	stereo_16_wavFile.readHeader(&stereo_16_origin);
-	unsigned char* buffer4 = stereo_16_wavFile.readAudio(&stereo_16_origin);
+
+	short *stereo_16_buffer_L = new short[stereo_16_wavFile.fileHeader.data_bytes];
+	short *stereo_16_buffer_R = new short[stereo_16_wavFile.fileHeader.data_bytes];
+
 	stereo_16_origin.close();
 	
 
@@ -159,17 +165,20 @@ int main() {
 		}
 
 		case 2:{
-			//Menu<Stereo8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&stereo_8_wavFile,stereo_8_name, stereo_8_buffer_L, stereo_8_buffer_R);
+			Menu<Stereo8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&stereo_8_wavFile,stereo_8_name, stereo_8_buffer_L, stereo_8_buffer_R);
 			break;
 		}
 
 
-
-		case 3:
+		case 3:{
+			Menu<Mono16Bit,short*, short*, short*> menu(&mono_16_wavFile,mono_16_name, mono_16_buffer);
 			break;
+		}
 
-		case 4:
+		case 4:{
+			  Menu<Stereo16Bit,short*, short*, short*> menu(&stereo_16_wavFile,stereo_16_name, stereo_16_buffer_L, stereo_16_buffer_R);
 			break;
+		}
 
 		default:
 			std::cout << "Please enter a valid option" << std::endl;
