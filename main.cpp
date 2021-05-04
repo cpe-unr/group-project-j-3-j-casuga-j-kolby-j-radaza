@@ -138,6 +138,7 @@ int main() {
 		// 8-bit MONO
 		case 1:{
 			Menu<Mono8Bit> menu(&mono_8_wavFile,mono_8_name);
+			//std::string answer = menu.processFile();
 
 			break;
 		}
@@ -162,7 +163,7 @@ int main() {
 		}
 
 
-	} while (choice != 0);
+	} while (choice != 0); // change this to when the bool flag for process done is over.
 
 
 
@@ -225,7 +226,7 @@ int main() {
 
 	/**
 
-	Processor *processorEcho = new NoiseGate(0.5);
+	    
 	processorEcho-> processMono(test.data_bytes, buffer);
 
 	//WRITTEN INTO ANOTHER FILE (NEW)

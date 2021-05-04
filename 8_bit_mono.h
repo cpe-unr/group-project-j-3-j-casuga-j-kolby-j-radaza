@@ -7,8 +7,8 @@
  * This is the 8 Bit Mono Class that inherits from header
  * Made by James Kolby
  */
-
-class Mono8Bit : public metadataIO, public header {
+//public metadataIO,
+class Mono8Bit :  public header {
 public:
 	/**
  	* This is the default constructor.
