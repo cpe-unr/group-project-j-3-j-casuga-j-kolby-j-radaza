@@ -9,7 +9,6 @@
 
 class Stereo16Bit : public header, public metadataIO {
 public:
-	waveHeader fileHeader;
 	
 	/**
  	* This is the default constructor.

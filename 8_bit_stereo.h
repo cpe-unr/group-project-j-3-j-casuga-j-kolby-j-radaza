@@ -8,9 +8,7 @@
  */
 
 class Stereo8Bit : public header, public metadataIO {
-public:
-	waveHeader fileHeader;
-	
+public:	
 	/**
  	* This is the default constructor.
  	*/

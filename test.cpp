@@ -105,7 +105,7 @@ int main() {
 	std::ifstream file (fileName, std::ios::binary | std::ios::in);
 	
 	if (file.is_open()) {
-		std::cout << "Opened File Successfull" << std::endl;
+		//std::cout << "Opened File Successfull" << std::endl;
 	} else {
 		std::cout << "Failed to open file in main" <<std::endl;
 	}
@@ -113,21 +113,26 @@ int main() {
 	// read header
 	Stereo16Bit test;
 	test.readHeader(&file);
-	std::cout << "riff_header " << test.riff_header << std::endl;
-	std::cout << "num_channels " << test.num_channels << std::endl;
-	std::cout << "data_header " << test.data_header << std::endl;
+	
+	//std::cout << "riff_header " << test.fileHeader.riff_header << std::endl;
+	//std::cout << "num_channels " << test.fileHeader.num_channels << std::endl;
+	std::cout << "data_header " << test.fileHeader.data_header << std::endl;
+	
 	
 	// read audio
 	short *bufferL = new short[test.fileHeader.data_bytes];
 	short *bufferR = new short[test.fileHeader.data_bytes];
 	test.readAudio(&file, bufferL, bufferR);
-	std::cout << "bufferL in test " << *bufferL << std::endl;
+	std::cout << "bufferL in test " << bufferL[50] << std::endl;
 	//std::cout << "bufferR in test " << bufferR << std::endl;
 	//std::cout << "data_bytes " << test.data_bytes << " # of channels " << test.num_channels << std::endl;
 	
 	// read metadata *note metadata is at the end of the file and should be read last*
 	test.readMetadata(&file);
+	/*
+	std::cout << "size of metadata " << sizeof(test.inam) << std::endl;
 	std::cout << "Metadata " << test.inam  << " end" << std::endl;
+	*/
 	
 	file.close();
 	

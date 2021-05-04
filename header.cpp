@@ -9,11 +9,24 @@ header::header () {}
 header::~header () {}
 
 void header::readHeader(std::ifstream *file) {
+/*
+	if (file->is_open()) {
+		//for (int i = 0; i < (sizeof(fileHeader)/4); i++) {
+			file->read(fileHeader.riff_header, 4);
+			char test[1024];
+			file->read(test, 1024);
+			//std::cout << "test " << fileHeader.riff_header << " end\n" << std::endl;
+		//}
+	} else {
+		std::cout << "Cannot write file header" << std::endl;
+	}
+*/
 	if (file->is_open()) {
 		file->read((char *) &fileHeader, sizeof(fileHeader));
 	} else {
 		std::cout << "Failed to read header from file" <<std::endl;
 	}
+	
 }
 
 void header::writeHeader(std::ofstream *file) {
@@ -32,6 +45,7 @@ metadataIO::~metadataIO () {}
 void metadataIO::readMetadata(std::ifstream *file) {
 	if (file->is_open()) {
 		file->read((char *) &Metadata, sizeof(Metadata));
+		//std::cout << "in the meta " << Metadata.inam << " end" << std::endl;
 	} else {
 		std::cout << "Failed to read metadata from file" <<std::endl;
 	}
