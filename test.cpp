@@ -59,14 +59,15 @@ int main() {
 	//delete buffer;
 	file.close();
 	
-	/*
+	
 	// write file
 	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
-	
+	std::cout << "reading done" << std::endl;
 	test.writeHeader(&outfile);
-	test.writeAudio(&outfile, buffer);
+	test.writeAudio(&outfile, bufferL, bufferR);
 	file.close();
-	*/
+*/
+	
 
 
 // 16 bit mono
@@ -85,7 +86,7 @@ int main() {
 	test.readHeader(&file);
 	short *buffer = test.readAudio(&file);
 	std::cout << "buffer in test " << buffer << std::endl;
-	delete buffer;
+	//delete buffer;
 	std::cout << test.data_bytes << " bytes and channels " << test.num_channels << std::endl;
 	file.close();
 	
@@ -96,11 +97,11 @@ int main() {
 	test.writeHeader(&outfile);
 	test.writeAudio(&outfile, buffer);
 	file.close();
-	
 	*/
+	
 
 // 16 bit stereo
-
+	
 	std::string fileName = "waves/yes-16-bit-stereo.wav";
 	std::ifstream file (fileName, std::ios::binary | std::ios::in);
 	
@@ -116,37 +117,37 @@ int main() {
 	
 	//std::cout << "riff_header " << test.fileHeader.riff_header << std::endl;
 	//std::cout << "num_channels " << test.fileHeader.num_channels << std::endl;
-	std::cout << "data_header " << test.fileHeader.data_header << std::endl;
+	//std::cout << "data_header " << test.fileHeader.data_header << std::endl;
 	
 	
 	// read audio
 	short *bufferL = new short[test.fileHeader.data_bytes];
 	short *bufferR = new short[test.fileHeader.data_bytes];
 	test.readAudio(&file, bufferL, bufferR);
-	std::cout << "bufferL in test " << bufferL[50] << std::endl;
+	//std::cout << "bufferL in test " << bufferL[100] << std::endl;
 	//std::cout << "bufferR in test " << bufferR << std::endl;
 	//std::cout << "data_bytes " << test.data_bytes << " # of channels " << test.num_channels << std::endl;
 	
 	// read metadata *note metadata is at the end of the file and should be read last*
 	test.readMetadata(&file);
-	/*
+	
 	std::cout << "size of metadata " << sizeof(test.inam) << std::endl;
 	std::cout << "Metadata " << test.inam  << " end" << std::endl;
-	*/
+	
 	
 	file.close();
 	
 	
 	// write file
-	/*
-	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
 	
+	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
+	std::cout << "reading done" << std::endl;
 	test.writeHeader(&outfile);
 	test.writeAudio(&outfile, bufferL, bufferR);
 
 	file.close();
 	delete bufferL;
 	delete bufferR;
-	*/
+	
 }
 
