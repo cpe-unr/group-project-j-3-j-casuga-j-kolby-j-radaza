@@ -95,9 +95,6 @@ int main() {
 	stereo_8_origin.close();
 
 
-
-
-
 	/**
 	*	This reads in the 16-bit mono wav file
 	*/
@@ -159,8 +156,8 @@ int main() {
 		// 8-bit MONO
 		case 1:{
 			Menu<Mono8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&mono_8_wavFile,mono_8_name, mono_8_buffer);
-			Processor *processorEcho = new Echo(15);
-			processorEcho-> processMono(10, mono_8_buffer);
+			//Processor *processorEcho = new Echo(15);
+			//processorEcho-> processMono(mono_8_wavFile.fileHeader.data_bytes, mono_8_buffer);
 			break;
 		}
 
