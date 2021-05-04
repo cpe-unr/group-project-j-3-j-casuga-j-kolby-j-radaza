@@ -34,15 +34,14 @@ void Stereo8Bit::readAudio(std::ifstream *file, unsigned char *bufferL, unsigned
 
 void Stereo8Bit::writeAudio(std::ofstream *file, unsigned char *bufferL, unsigned char *bufferR) {
 	if (file->is_open()) {
-		for (int i=0; i < fileHeader.data_bytes/2; i++) {
-			
-			//short test = ;
-			char Lchar = (char) bufferL[i];
-			char Rchar = (char) bufferR[i];
-			
-			file->write(&Lchar, 1);
-			file->write(&Rchar, 1);
-			//file << Lchar << Rchar;
+		for (int i=0; i < fileHeader.data_bytes-1; i++) {
+			if (i%2==0) {
+				char Lchar = (char) bufferL[i];
+				file->write(&Lchar, 1);
+			} else {
+				char Rchar = (char) bufferR[i];
+				file->write(&Rchar, 1);
+			}
 		}
 	} else {
 		std::cout << "Failed to write to file." << std::endl;

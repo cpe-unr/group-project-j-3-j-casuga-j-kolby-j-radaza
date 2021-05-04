@@ -10,7 +10,7 @@ void Stereo16Bit::readAudio(std::ifstream *file, short *bufferL, short *bufferR)
 	short *R = new short;
 	
 	if (file->is_open()) {
-		for (int i=0; i < fileHeader.data_bytes/2; i++) {
+		for (int i=0; i < fileHeader.data_bytes-1; i++) {
 			if (i%2==0) {
 				file->read((char *) L, 1);
 				bufferL[i] = *L;
@@ -33,14 +33,14 @@ void Stereo16Bit::readAudio(std::ifstream *file, short *bufferL, short *bufferR)
 
 void Stereo16Bit::writeAudio(std::ofstream *file, short *bufferL, short *bufferR) {
 	if (file->is_open()) {
-		for (int i=0; i < fileHeader.data_bytes/2; i++) {
-			
-			//short test = ;
-			char Lchar = (char) bufferL[i];
-			char Rchar = (char) bufferR[i];
-			
-			file->write(&Lchar, 1);
-			file->write(&Rchar, 1);
+		for (int i=0; i < fileHeader.data_bytes-1; i++) {
+			if (i%2==0) {
+				char Lchar = (char) bufferL[i];
+				file->write(&Lchar, 1);
+			} else {
+				char Rchar = (char) bufferR[i];
+				file->write(&Rchar, 1);
+			}
 		}
 	} else {
 		std::cout << "Failed to write to file." << std::endl;
