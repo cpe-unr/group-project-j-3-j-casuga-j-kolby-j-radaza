@@ -22,12 +22,21 @@ header.o: header.h header.cpp wave_header.h
 	
 8bitmono.o: 8_bit_mono.h 8_bit_mono.cpp header.h wave_header.h
 	g++ -std=c++11 -c 8_bit_mono.cpp
+
+8bitstereo.o: 8_bit_stereo.h 8_bit_stereo.cpp header.h wave_header.h
+	g++ -std=c++11 -c 8_bit_stereo.cpp
+	
+16bitmono.o: 16_bit_mono.h 16_bit_mono.cpp header.h wave_header.h
+	g++ -std=c++11 -c 16_bit_mono.cpp
+	
+16bitstereo.o: 16_bit_stereo.h 16_bit_stereo.cpp header.h wave_header.h
+	g++ -std=c++11 -c 16_bit_stereo.cpp
 	
 test.o:
 	g++ -std=c++11 -c test.cpp -o test.o
 	
-test: test.o header.o 8_bit_mono.o
-	g++ -std=c++11 test.o header.o 8_bit_mono.o -o test
+test: test.o header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o
+	g++ -std=c++11 test.o header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o -o test
 
 
 
