@@ -134,10 +134,13 @@ int main() {
 	std::cout << "size of metadata " << sizeof(test.inam) << std::endl;
 	std::cout << "Metadata " << test.inam  << " end" << std::endl;
 	*/
+	//This format is how to get the CSV file written. In this case the variable files should be the name of the the CSV file with the .CSV at the end. file should be an ifstream variable as shown above this code. Test should be the object that is created by any of the subclasses 8bit 16 bit etc. io is just a new metadataIO object.
 	CSV csv;
-	std::string files = "16bitCSV.txt";
+	std::string files = "16bitCSV.CSV";
 	metadataIO io;
 	csv.writeCSV(files, &file, test, io);
+
+
 	file.close();
 	
 	
