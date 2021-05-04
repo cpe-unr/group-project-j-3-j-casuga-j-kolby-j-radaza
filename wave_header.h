@@ -2,7 +2,7 @@
 #define WAVEHEADER_H
 /**
  * This is the wave header struct that holds the data of the file headers
- * Stolen from Keith Lancaster
+ * Stolen from Keith Lancaster <- LOL
  */
 struct waveHeader {
 	char riff_header[4];
