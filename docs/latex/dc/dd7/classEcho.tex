@@ -1,0 +1,122 @@
+\hypertarget{classEcho}{}\section{Echo Class Reference}
+\label{classEcho}\index{Echo@{Echo}}
+
+
+{\ttfamily \#include $<$echo.\+h$>$}
+
+
+
+Inheritance diagram for Echo\+:
+% FIG 0
+
+
+Collaboration diagram for Echo\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEcho_aa986059869416324c246a403e09c584d}{process\+Mono} (int size, unsigned char $\ast$buffer)
+\item 
+void \hyperlink{classEcho_adadbb432a61bd1e2036f0690bfe0b1a0}{process\+Stereo} (int size, unsigned char $\ast$bufferL, unsigned char $\ast$bufferR)
+\item 
+void \hyperlink{classEcho_af5155cf6165be0317de49e4498268062}{process\+Mono} (int size, short $\ast$buffer)
+\item 
+void \hyperlink{classEcho_afa8da13f6e9b0a490c4a03cc683ff6e2}{process\+Stereo} (int size, short $\ast$bufferL, short $\ast$bufferR)
+\item 
+\hyperlink{classEcho_ababd42898feed0775f5234d53fe9bff1}{Echo} ()
+\item 
+\hyperlink{classEcho_a886f34b24dd78cefc0e76e965d2aec12}{Echo} (int n\+Delay)
+\item 
+int \hyperlink{classEcho_a57e19c9232f9bb96ccd78ba4bb68d6c9}{get\+Delay} ()
+\item 
+void \hyperlink{classEcho_acb5bd7a6c5d2d53d79189458b9342583}{set\+Delay} (int n\+Delay)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classEcho}{Echo} Class that inherits from \hyperlink{classProcessor}{Processor} Made by Justin Casuga 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEcho_ababd42898feed0775f5234d53fe9bff1}\label{classEcho_ababd42898feed0775f5234d53fe9bff1}} 
+\index{Echo@{Echo}!Echo@{Echo}}
+\index{Echo@{Echo}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{Echo()}{Echo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Echo\+::\+Echo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is \hyperlink{classEcho}{Echo}\textquotesingle{}s default constructor \mbox{\Hypertarget{classEcho_a886f34b24dd78cefc0e76e965d2aec12}\label{classEcho_a886f34b24dd78cefc0e76e965d2aec12}} 
+\index{Echo@{Echo}!Echo@{Echo}}
+\index{Echo@{Echo}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{Echo()}{Echo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Echo\+::\+Echo (\begin{DoxyParamCaption}\item[{int}]{n\+Delay }\end{DoxyParamCaption})}
+
+This is \hyperlink{classEcho}{Echo}\textquotesingle{}s parameterized constructor 
+\begin{DoxyParams}{Parameters}
+{\em n\+Delay} & -\/ the delay that affects the echo processing \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEcho_a57e19c9232f9bb96ccd78ba4bb68d6c9}\label{classEcho_a57e19c9232f9bb96ccd78ba4bb68d6c9}} 
+\index{Echo@{Echo}!get\+Delay@{get\+Delay}}
+\index{get\+Delay@{get\+Delay}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{get\+Delay()}{getDelay()}}
+{\footnotesize\ttfamily int Echo\+::get\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is \hyperlink{classEcho}{Echo}\textquotesingle{}s getter for the private attribute Delay \mbox{\Hypertarget{classEcho_aa986059869416324c246a403e09c584d}\label{classEcho_aa986059869416324c246a403e09c584d}} 
+\index{Echo@{Echo}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Echo\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 8 bit mono echo processing 
+
+Implements \hyperlink{classProcessor_aae6af1473510f56839f3e15328962fb0}{Processor}.
+
+\mbox{\Hypertarget{classEcho_af5155cf6165be0317de49e4498268062}\label{classEcho_af5155cf6165be0317de49e4498268062}} 
+\index{Echo@{Echo}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Echo\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 16 bit mono echo processing 
+
+Implements \hyperlink{classProcessor_ab24fa87b5eb6246cf8599756b3b5862d}{Processor}.
+
+\mbox{\Hypertarget{classEcho_adadbb432a61bd1e2036f0690bfe0b1a0}\label{classEcho_adadbb432a61bd1e2036f0690bfe0b1a0}} 
+\index{Echo@{Echo}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Echo\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{bufferL,  }\item[{unsigned char $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 8 bit stereo echo processing 
+
+Implements \hyperlink{classProcessor_a9b3db1d1810308706285c3ffd1f6d28c}{Processor}.
+
+\mbox{\Hypertarget{classEcho_afa8da13f6e9b0a490c4a03cc683ff6e2}\label{classEcho_afa8da13f6e9b0a490c4a03cc683ff6e2}} 
+\index{Echo@{Echo}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Echo\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{bufferL,  }\item[{short $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstact function from processsor that is overidded to handle 16 bit stereo echo processing 
+
+Implements \hyperlink{classProcessor_a705ddc9aa4c2400a30691fc9888c8e9e}{Processor}.
+
+\mbox{\Hypertarget{classEcho_acb5bd7a6c5d2d53d79189458b9342583}\label{classEcho_acb5bd7a6c5d2d53d79189458b9342583}} 
+\index{Echo@{Echo}!set\+Delay@{set\+Delay}}
+\index{set\+Delay@{set\+Delay}!Echo@{Echo}}
+\subsubsection{\texorpdfstring{set\+Delay()}{setDelay()}}
+{\footnotesize\ttfamily void Echo\+::set\+Delay (\begin{DoxyParamCaption}\item[{int}]{n\+Delay }\end{DoxyParamCaption})}
+
+This is \hyperlink{classEcho}{Echo}\textquotesingle{}s setter for the private attribute Delay 
+\begin{DoxyParams}{Parameters}
+{\em n\+Delay} & -\/ the delay that is passed in \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+echo.\+h\item 
+echo.\+cpp\end{DoxyCompactItemize}

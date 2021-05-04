@@ -1,0 +1,122 @@
+\hypertarget{classNoiseGate}{}\section{Noise\+Gate Class Reference}
+\label{classNoiseGate}\index{Noise\+Gate@{Noise\+Gate}}
+
+
+{\ttfamily \#include $<$noise\+\_\+gate.\+h$>$}
+
+
+
+Inheritance diagram for Noise\+Gate\+:
+% FIG 0
+
+
+Collaboration diagram for Noise\+Gate\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNoiseGate_ae8fd94876fcfe26528fb62df850f92f9}{process\+Mono} (int size, unsigned char $\ast$buffer)
+\item 
+void \hyperlink{classNoiseGate_ae8fb9a08e73fe9940c2c06c0c4613175}{process\+Stereo} (int size, unsigned char $\ast$bufferL, unsigned char $\ast$bufferR)
+\item 
+void \hyperlink{classNoiseGate_a8cb287300db269efcb8130a9f21d205b}{process\+Mono} (int size, short $\ast$buffer)
+\item 
+void \hyperlink{classNoiseGate_ab1bf83dd8cf6f0438f204b90bfad2a00}{process\+Stereo} (int size, short $\ast$bufferL, short $\ast$bufferR)
+\item 
+\hyperlink{classNoiseGate_ae9ccbe5934108f756ada0e492db5f71e}{Noise\+Gate} ()
+\item 
+\hyperlink{classNoiseGate_ad305ed6c1cd711e5a78026815f94f6c5}{Noise\+Gate} (double n\+Amp)
+\item 
+double \hyperlink{classNoiseGate_aa3bc6ff59a5448071d8b78ece44190e7}{get\+Amp} ()
+\item 
+void \hyperlink{classNoiseGate_a9fef7751dbab94fa02c897a87bed449e}{set\+Amp} (double n\+Amp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the Noise Gate Class that inherits from \hyperlink{classProcessor}{Processor} Made by Justin Casuga 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNoiseGate_ae9ccbe5934108f756ada0e492db5f71e}\label{classNoiseGate_ae9ccbe5934108f756ada0e492db5f71e}} 
+\index{Noise\+Gate@{Noise\+Gate}!Noise\+Gate@{Noise\+Gate}}
+\index{Noise\+Gate@{Noise\+Gate}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{Noise\+Gate()}{NoiseGate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Noise\+Gate\+::\+Noise\+Gate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is Noise Gate\textquotesingle{}s default constructor \mbox{\Hypertarget{classNoiseGate_ad305ed6c1cd711e5a78026815f94f6c5}\label{classNoiseGate_ad305ed6c1cd711e5a78026815f94f6c5}} 
+\index{Noise\+Gate@{Noise\+Gate}!Noise\+Gate@{Noise\+Gate}}
+\index{Noise\+Gate@{Noise\+Gate}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{Noise\+Gate()}{NoiseGate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Noise\+Gate\+::\+Noise\+Gate (\begin{DoxyParamCaption}\item[{double}]{n\+Amp }\end{DoxyParamCaption})}
+
+This is Noise Gate\textquotesingle{}s parameterized constructor 
+\begin{DoxyParams}{Parameters}
+{\em n\+Amp} & -\/ The amplitude that affects noise gate processing \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNoiseGate_aa3bc6ff59a5448071d8b78ece44190e7}\label{classNoiseGate_aa3bc6ff59a5448071d8b78ece44190e7}} 
+\index{Noise\+Gate@{Noise\+Gate}!get\+Amp@{get\+Amp}}
+\index{get\+Amp@{get\+Amp}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{get\+Amp()}{getAmp()}}
+{\footnotesize\ttfamily double Noise\+Gate\+::get\+Amp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is Noise Gate\textquotesingle{}s getter for the private attribute Amp \mbox{\Hypertarget{classNoiseGate_ae8fd94876fcfe26528fb62df850f92f9}\label{classNoiseGate_ae8fd94876fcfe26528fb62df850f92f9}} 
+\index{Noise\+Gate@{Noise\+Gate}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Noise\+Gate\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 8 bit mono noise gate processing 
+
+Implements \hyperlink{classProcessor_aae6af1473510f56839f3e15328962fb0}{Processor}.
+
+\mbox{\Hypertarget{classNoiseGate_a8cb287300db269efcb8130a9f21d205b}\label{classNoiseGate_a8cb287300db269efcb8130a9f21d205b}} 
+\index{Noise\+Gate@{Noise\+Gate}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Noise\+Gate\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 16 bit mono noise gate processing 
+
+Implements \hyperlink{classProcessor_ab24fa87b5eb6246cf8599756b3b5862d}{Processor}.
+
+\mbox{\Hypertarget{classNoiseGate_ae8fb9a08e73fe9940c2c06c0c4613175}\label{classNoiseGate_ae8fb9a08e73fe9940c2c06c0c4613175}} 
+\index{Noise\+Gate@{Noise\+Gate}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Noise\+Gate\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{bufferL,  }\item[{unsigned char $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 8 bit stereo noise gate processing 
+
+Implements \hyperlink{classProcessor_a9b3db1d1810308706285c3ffd1f6d28c}{Processor}.
+
+\mbox{\Hypertarget{classNoiseGate_ab1bf83dd8cf6f0438f204b90bfad2a00}\label{classNoiseGate_ab1bf83dd8cf6f0438f204b90bfad2a00}} 
+\index{Noise\+Gate@{Noise\+Gate}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Noise\+Gate\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{bufferL,  }\item[{short $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstact function from processsor that is overidded to handle 16 bit stereo noise gate processing 
+
+Implements \hyperlink{classProcessor_a705ddc9aa4c2400a30691fc9888c8e9e}{Processor}.
+
+\mbox{\Hypertarget{classNoiseGate_a9fef7751dbab94fa02c897a87bed449e}\label{classNoiseGate_a9fef7751dbab94fa02c897a87bed449e}} 
+\index{Noise\+Gate@{Noise\+Gate}!set\+Amp@{set\+Amp}}
+\index{set\+Amp@{set\+Amp}!Noise\+Gate@{Noise\+Gate}}
+\subsubsection{\texorpdfstring{set\+Amp()}{setAmp()}}
+{\footnotesize\ttfamily void Noise\+Gate\+::set\+Amp (\begin{DoxyParamCaption}\item[{double}]{n\+Amp }\end{DoxyParamCaption})}
+
+This is Noise Gate\textquotesingle{}s setter for the private attribute Amp 
+\begin{DoxyParams}{Parameters}
+{\em n\+Amp} & -\/ The amplitude that gets passed in \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+noise\+\_\+gate.\+h\item 
+noise\+\_\+gate.\+cpp\end{DoxyCompactItemize}

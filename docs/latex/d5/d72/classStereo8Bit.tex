@@ -1,0 +1,83 @@
+\hypertarget{classStereo8Bit}{}\section{Stereo8\+Bit Class Reference}
+\label{classStereo8Bit}\index{Stereo8\+Bit@{Stereo8\+Bit}}
+
+
+{\ttfamily \#include $<$8\+\_\+bit\+\_\+stereo.\+h$>$}
+
+
+
+Inheritance diagram for Stereo8\+Bit\+:
+% FIG 0
+
+
+Collaboration diagram for Stereo8\+Bit\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStereo8Bit_a7dd16a65c190a5cfa7daa449a2cc2366}{Stereo8\+Bit} ()
+\item 
+\hyperlink{classStereo8Bit_aad4ea9258c6313243c7d56b34e8894da}{$\sim$\+Stereo8\+Bit} ()
+\item 
+void \hyperlink{classStereo8Bit_ab636dffdbabac3c7d3bf1bbeebbd736e}{read\+Audio} (std\+::ifstream $\ast$file, unsigned char $\ast$bufferL, unsigned char $\ast$bufferR)
+\item 
+void \hyperlink{classStereo8Bit_ad181941f5da5effbfb38d73bf7005e54}{write\+Audio} (std\+::ofstream $\ast$file, unsigned char $\ast$bufferL, unsigned char $\ast$bufferR)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the 8 Bit Stereo Class that inherits from header Made by James Kolby 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStereo8Bit_a7dd16a65c190a5cfa7daa449a2cc2366}\label{classStereo8Bit_a7dd16a65c190a5cfa7daa449a2cc2366}} 
+\index{Stereo8\+Bit@{Stereo8\+Bit}!Stereo8\+Bit@{Stereo8\+Bit}}
+\index{Stereo8\+Bit@{Stereo8\+Bit}!Stereo8\+Bit@{Stereo8\+Bit}}
+\subsubsection{\texorpdfstring{Stereo8\+Bit()}{Stereo8Bit()}}
+{\footnotesize\ttfamily Stereo8\+Bit\+::\+Stereo8\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default constructor. \mbox{\Hypertarget{classStereo8Bit_aad4ea9258c6313243c7d56b34e8894da}\label{classStereo8Bit_aad4ea9258c6313243c7d56b34e8894da}} 
+\index{Stereo8\+Bit@{Stereo8\+Bit}!````~Stereo8\+Bit@{$\sim$\+Stereo8\+Bit}}
+\index{````~Stereo8\+Bit@{$\sim$\+Stereo8\+Bit}!Stereo8\+Bit@{Stereo8\+Bit}}
+\subsubsection{\texorpdfstring{$\sim$\+Stereo8\+Bit()}{~Stereo8Bit()}}
+{\footnotesize\ttfamily Stereo8\+Bit\+::$\sim$\+Stereo8\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStereo8Bit_ab636dffdbabac3c7d3bf1bbeebbd736e}\label{classStereo8Bit_ab636dffdbabac3c7d3bf1bbeebbd736e}} 
+\index{Stereo8\+Bit@{Stereo8\+Bit}!read\+Audio@{read\+Audio}}
+\index{read\+Audio@{read\+Audio}!Stereo8\+Bit@{Stereo8\+Bit}}
+\subsubsection{\texorpdfstring{read\+Audio()}{readAudio()}}
+{\footnotesize\ttfamily void Stereo8\+Bit\+::read\+Audio (\begin{DoxyParamCaption}\item[{std\+::ifstream $\ast$}]{file,  }\item[{unsigned char $\ast$}]{bufferL,  }\item[{unsigned char $\ast$}]{bufferR }\end{DoxyParamCaption})}
+
+This function reads audio data from a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be read. \\
+\hline
+{\em $<$em$>$bufferL} & -\/ The unsigned char array for the left channel \\
+\hline
+{\em $<$em$>$bufferL} & -\/ The unsigned char array for the right channel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStereo8Bit_ad181941f5da5effbfb38d73bf7005e54}\label{classStereo8Bit_ad181941f5da5effbfb38d73bf7005e54}} 
+\index{Stereo8\+Bit@{Stereo8\+Bit}!write\+Audio@{write\+Audio}}
+\index{write\+Audio@{write\+Audio}!Stereo8\+Bit@{Stereo8\+Bit}}
+\subsubsection{\texorpdfstring{write\+Audio()}{writeAudio()}}
+{\footnotesize\ttfamily void Stereo8\+Bit\+::write\+Audio (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{file,  }\item[{unsigned char $\ast$}]{bufferL,  }\item[{unsigned char $\ast$}]{bufferR }\end{DoxyParamCaption})}
+
+This function writes audio data to a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be written to. \\
+\hline
+{\em $<$em$>$bufferL} & -\/ The unsigned char array for the left channel \\
+\hline
+{\em $<$em$>$bufferL} & -\/ The unsigned char array for the right channel \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+8\+\_\+bit\+\_\+stereo.\+h\item 
+8\+\_\+bit\+\_\+stereo.\+cpp\end{DoxyCompactItemize}

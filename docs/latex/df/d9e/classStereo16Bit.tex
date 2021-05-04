@@ -1,0 +1,83 @@
+\hypertarget{classStereo16Bit}{}\section{Stereo16\+Bit Class Reference}
+\label{classStereo16Bit}\index{Stereo16\+Bit@{Stereo16\+Bit}}
+
+
+{\ttfamily \#include $<$16\+\_\+bit\+\_\+stereo.\+h$>$}
+
+
+
+Inheritance diagram for Stereo16\+Bit\+:
+% FIG 0
+
+
+Collaboration diagram for Stereo16\+Bit\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStereo16Bit_aaeaeea1f396e92d462bd9aab39c80bc7}{Stereo16\+Bit} ()
+\item 
+\hyperlink{classStereo16Bit_a2b686fbed213e75b3f1d5f60c3897a85}{$\sim$\+Stereo16\+Bit} ()
+\item 
+void \hyperlink{classStereo16Bit_a6411217aab584edb8db900d0d5b9d8a0}{read\+Audio} (std\+::ifstream $\ast$file, short $\ast$bufferL, short $\ast$bufferR)
+\item 
+void \hyperlink{classStereo16Bit_a57ede5ea6c6a3aa7ff15ee04c3011ffb}{write\+Audio} (std\+::ofstream $\ast$file, short $\ast$bufferL, short $\ast$bufferR)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the 16 Bit Stereo Class that inherits from header Made by James Kolby 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStereo16Bit_aaeaeea1f396e92d462bd9aab39c80bc7}\label{classStereo16Bit_aaeaeea1f396e92d462bd9aab39c80bc7}} 
+\index{Stereo16\+Bit@{Stereo16\+Bit}!Stereo16\+Bit@{Stereo16\+Bit}}
+\index{Stereo16\+Bit@{Stereo16\+Bit}!Stereo16\+Bit@{Stereo16\+Bit}}
+\subsubsection{\texorpdfstring{Stereo16\+Bit()}{Stereo16Bit()}}
+{\footnotesize\ttfamily Stereo16\+Bit\+::\+Stereo16\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default constructor. \mbox{\Hypertarget{classStereo16Bit_a2b686fbed213e75b3f1d5f60c3897a85}\label{classStereo16Bit_a2b686fbed213e75b3f1d5f60c3897a85}} 
+\index{Stereo16\+Bit@{Stereo16\+Bit}!````~Stereo16\+Bit@{$\sim$\+Stereo16\+Bit}}
+\index{````~Stereo16\+Bit@{$\sim$\+Stereo16\+Bit}!Stereo16\+Bit@{Stereo16\+Bit}}
+\subsubsection{\texorpdfstring{$\sim$\+Stereo16\+Bit()}{~Stereo16Bit()}}
+{\footnotesize\ttfamily Stereo16\+Bit\+::$\sim$\+Stereo16\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStereo16Bit_a6411217aab584edb8db900d0d5b9d8a0}\label{classStereo16Bit_a6411217aab584edb8db900d0d5b9d8a0}} 
+\index{Stereo16\+Bit@{Stereo16\+Bit}!read\+Audio@{read\+Audio}}
+\index{read\+Audio@{read\+Audio}!Stereo16\+Bit@{Stereo16\+Bit}}
+\subsubsection{\texorpdfstring{read\+Audio()}{readAudio()}}
+{\footnotesize\ttfamily void Stereo16\+Bit\+::read\+Audio (\begin{DoxyParamCaption}\item[{std\+::ifstream $\ast$}]{file,  }\item[{short $\ast$}]{bufferL,  }\item[{short $\ast$}]{bufferR }\end{DoxyParamCaption})}
+
+This function reads audio data from a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be read. \\
+\hline
+{\em $\ast$bufferL} & -\/ The short array for the left channel \\
+\hline
+{\em $\ast$bufferL} & -\/ The short array for the right channel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStereo16Bit_a57ede5ea6c6a3aa7ff15ee04c3011ffb}\label{classStereo16Bit_a57ede5ea6c6a3aa7ff15ee04c3011ffb}} 
+\index{Stereo16\+Bit@{Stereo16\+Bit}!write\+Audio@{write\+Audio}}
+\index{write\+Audio@{write\+Audio}!Stereo16\+Bit@{Stereo16\+Bit}}
+\subsubsection{\texorpdfstring{write\+Audio()}{writeAudio()}}
+{\footnotesize\ttfamily void Stereo16\+Bit\+::write\+Audio (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{file,  }\item[{short $\ast$}]{bufferL,  }\item[{short $\ast$}]{bufferR }\end{DoxyParamCaption})}
+
+This function writes audio data to a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be written to. \\
+\hline
+{\em $\ast$bufferL} & -\/ The short array for the left channel \\
+\hline
+{\em $\ast$bufferL} & -\/ The short array for the right channel \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+16\+\_\+bit\+\_\+stereo.\+h\item 
+16\+\_\+bit\+\_\+stereo.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\hypertarget{classProcessor}{}\section{Processor Class Reference}
+\label{classProcessor}\index{Processor@{Processor}}
+
+
+{\ttfamily \#include $<$processor.\+h$>$}
+
+
+
+Inheritance diagram for Processor\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classProcessor_aae6af1473510f56839f3e15328962fb0}{process\+Mono} (int size, unsigned char $\ast$buffer)=0
+\item 
+virtual void \hyperlink{classProcessor_a9b3db1d1810308706285c3ffd1f6d28c}{process\+Stereo} (int size, unsigned char $\ast$bufferL, unsigned char $\ast$bufferR)=0
+\item 
+virtual void \hyperlink{classProcessor_ab24fa87b5eb6246cf8599756b3b5862d}{process\+Mono} (int size, short $\ast$buffer)=0
+\item 
+virtual void \hyperlink{classProcessor_a705ddc9aa4c2400a30691fc9888c8e9e}{process\+Stereo} (int size, short $\ast$bufferL, short $\ast$bufferR)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classProcessor}{Processor} Abstract Class Made by Justin Casuga 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProcessor_aae6af1473510f56839f3e15328962fb0}\label{classProcessor_aae6af1473510f56839f3e15328962fb0}} 
+\index{Processor@{Processor}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Processor@{Processor}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Processor\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is abstract and virtual to allow child classes to inherit the method to handle 8 Bit Mono. 
+\begin{DoxyParams}{Parameters}
+{\em size} & -\/ The size of the array \\
+\hline
+{\em buffer} & -\/ An unsigned char pointer that points to an array, one for Mono audio files \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classEcho_aa986059869416324c246a403e09c584d}{Echo}, \hyperlink{classNoiseGate_ae8fd94876fcfe26528fb62df850f92f9}{Noise\+Gate}, and \hyperlink{classNormalizer_a6063bdca1769d4f5dca7d76272344a03}{Normalizer}.
+
+\mbox{\Hypertarget{classProcessor_ab24fa87b5eb6246cf8599756b3b5862d}\label{classProcessor_ab24fa87b5eb6246cf8599756b3b5862d}} 
+\index{Processor@{Processor}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Processor@{Processor}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Processor\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is abstract and virtual to allow child classes to inherit the method to handle 16 Bit Mono. 
+\begin{DoxyParams}{Parameters}
+{\em size} & -\/ The size of the array \\
+\hline
+{\em buffer} & -\/ An unsigned char pointer that points to an array, one for Mono audio files \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classEcho_af5155cf6165be0317de49e4498268062}{Echo}, \hyperlink{classNoiseGate_a8cb287300db269efcb8130a9f21d205b}{Noise\+Gate}, and \hyperlink{classNormalizer_aa997755adc989a2b6610cfd944824bdc}{Normalizer}.
+
+\mbox{\Hypertarget{classProcessor_a9b3db1d1810308706285c3ffd1f6d28c}\label{classProcessor_a9b3db1d1810308706285c3ffd1f6d28c}} 
+\index{Processor@{Processor}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Processor@{Processor}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Processor\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{bufferL,  }\item[{unsigned char $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is abstrac and virtual to allow child classes to inherit the method to handle 8 Bit Stereo. 
+\begin{DoxyParams}{Parameters}
+{\em sizeL} & -\/ The size of the array \\
+\hline
+{\em bufferL} & -\/ An unsigned char pointer that points to the left side array \\
+\hline
+{\em bufferR} & -\/ An unsigned char pointer that points to the right side array \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classEcho_adadbb432a61bd1e2036f0690bfe0b1a0}{Echo}, \hyperlink{classNoiseGate_ae8fb9a08e73fe9940c2c06c0c4613175}{Noise\+Gate}, and \hyperlink{classNormalizer_aa9d9a19237a6b208ead3a9cc96b07451}{Normalizer}.
+
+\mbox{\Hypertarget{classProcessor_a705ddc9aa4c2400a30691fc9888c8e9e}\label{classProcessor_a705ddc9aa4c2400a30691fc9888c8e9e}} 
+\index{Processor@{Processor}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Processor@{Processor}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Processor\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{bufferL,  }\item[{short $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is abstract and virtual to allow child classes to inherit the method to handle 16 Bit Stereo. 
+\begin{DoxyParams}{Parameters}
+{\em sizeL} & -\/ The size of the array \\
+\hline
+{\em bufferL} & -\/ An unsigned char pointer that points to the left side array \\
+\hline
+{\em bufferR} & -\/ An unsigned char pointer that points to the right side array \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classEcho_afa8da13f6e9b0a490c4a03cc683ff6e2}{Echo}, \hyperlink{classNoiseGate_ab1bf83dd8cf6f0438f204b90bfad2a00}{Noise\+Gate}, and \hyperlink{classNormalizer_a8a907de202a6f1173cd2ee8b7266971e}{Normalizer}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+processor.\+h\end{DoxyCompactItemize}

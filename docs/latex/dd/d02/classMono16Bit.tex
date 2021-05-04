@@ -1,0 +1,77 @@
+\hypertarget{classMono16Bit}{}\section{Mono16\+Bit Class Reference}
+\label{classMono16Bit}\index{Mono16\+Bit@{Mono16\+Bit}}
+
+
+{\ttfamily \#include $<$16\+\_\+bit\+\_\+mono.\+h$>$}
+
+
+
+Inheritance diagram for Mono16\+Bit\+:
+% FIG 0
+
+
+Collaboration diagram for Mono16\+Bit\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMono16Bit_a41534a9f56264dc05353a7c9484b35bb}{Mono16\+Bit} ()
+\item 
+\hyperlink{classMono16Bit_a813c10ea813d3b06bd33602b4a24c8c6}{$\sim$\+Mono16\+Bit} ()
+\item 
+short $\ast$ \hyperlink{classMono16Bit_aaf15021eb1430170f892278aeac8ba10}{read\+Audio} (std\+::ifstream $\ast$file)
+\item 
+void \hyperlink{classMono16Bit_a3ef28645b53a11ca002344cf31d7c988}{write\+Audio} (std\+::ofstream $\ast$file, short $\ast$buffer)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the 16 Bit Mono Class that inherits from header Made by James Kolby 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMono16Bit_a41534a9f56264dc05353a7c9484b35bb}\label{classMono16Bit_a41534a9f56264dc05353a7c9484b35bb}} 
+\index{Mono16\+Bit@{Mono16\+Bit}!Mono16\+Bit@{Mono16\+Bit}}
+\index{Mono16\+Bit@{Mono16\+Bit}!Mono16\+Bit@{Mono16\+Bit}}
+\subsubsection{\texorpdfstring{Mono16\+Bit()}{Mono16Bit()}}
+{\footnotesize\ttfamily Mono16\+Bit\+::\+Mono16\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default constructor. \mbox{\Hypertarget{classMono16Bit_a813c10ea813d3b06bd33602b4a24c8c6}\label{classMono16Bit_a813c10ea813d3b06bd33602b4a24c8c6}} 
+\index{Mono16\+Bit@{Mono16\+Bit}!````~Mono16\+Bit@{$\sim$\+Mono16\+Bit}}
+\index{````~Mono16\+Bit@{$\sim$\+Mono16\+Bit}!Mono16\+Bit@{Mono16\+Bit}}
+\subsubsection{\texorpdfstring{$\sim$\+Mono16\+Bit()}{~Mono16Bit()}}
+{\footnotesize\ttfamily Mono16\+Bit\+::$\sim$\+Mono16\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMono16Bit_aaf15021eb1430170f892278aeac8ba10}\label{classMono16Bit_aaf15021eb1430170f892278aeac8ba10}} 
+\index{Mono16\+Bit@{Mono16\+Bit}!read\+Audio@{read\+Audio}}
+\index{read\+Audio@{read\+Audio}!Mono16\+Bit@{Mono16\+Bit}}
+\subsubsection{\texorpdfstring{read\+Audio()}{readAudio()}}
+{\footnotesize\ttfamily short $\ast$ Mono16\+Bit\+::read\+Audio (\begin{DoxyParamCaption}\item[{std\+::ifstream $\ast$}]{file }\end{DoxyParamCaption})}
+
+This function reads audio data from a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be read. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMono16Bit_a3ef28645b53a11ca002344cf31d7c988}\label{classMono16Bit_a3ef28645b53a11ca002344cf31d7c988}} 
+\index{Mono16\+Bit@{Mono16\+Bit}!write\+Audio@{write\+Audio}}
+\index{write\+Audio@{write\+Audio}!Mono16\+Bit@{Mono16\+Bit}}
+\subsubsection{\texorpdfstring{write\+Audio()}{writeAudio()}}
+{\footnotesize\ttfamily void Mono16\+Bit\+::write\+Audio (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{file,  }\item[{short $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+This function writes audio data to a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be written to. \\
+\hline
+{\em $\ast$buffer} & -\/ The short array of audio data. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+16\+\_\+bit\+\_\+mono.\+h\item 
+16\+\_\+bit\+\_\+mono.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{classNormalizer}{}\section{Normalizer Class Reference}
+\label{classNormalizer}\index{Normalizer@{Normalizer}}
+
+
+{\ttfamily \#include $<$normalizer.\+h$>$}
+
+
+
+Inheritance diagram for Normalizer\+:
+% FIG 0
+
+
+Collaboration diagram for Normalizer\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNormalizer_a6063bdca1769d4f5dca7d76272344a03}{process\+Mono} (int size, unsigned char $\ast$buffer)
+\item 
+void \hyperlink{classNormalizer_aa9d9a19237a6b208ead3a9cc96b07451}{process\+Stereo} (int size, unsigned char $\ast$bufferL, unsigned char $\ast$bufferR)
+\item 
+void \hyperlink{classNormalizer_aa997755adc989a2b6610cfd944824bdc}{process\+Mono} (int size, short $\ast$buffer)
+\item 
+void \hyperlink{classNormalizer_a8a907de202a6f1173cd2ee8b7266971e}{process\+Stereo} (int size, short $\ast$bufferL, short $\ast$bufferR)
+\item 
+\hyperlink{classNormalizer_af576151323854ff0d4d7e37255c397d1}{Normalizer} ()
+\item 
+\hyperlink{classNormalizer_a5ae90bf733bda279916ef5c05a15d0c1}{Normalizer} (int max)
+\item 
+int \hyperlink{classNormalizer_aaa963519038425f08b3b2ca933cd4215}{get\+Max} ()
+\item 
+void \hyperlink{classNormalizer_aadfdabbf13c93c2775f99ddef9ebe6b9}{set\+Max} (int n\+Max)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classEcho}{Echo} Class that inherits from \hyperlink{classProcessor}{Processor} Made by Justin Casuga 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNormalizer_af576151323854ff0d4d7e37255c397d1}\label{classNormalizer_af576151323854ff0d4d7e37255c397d1}} 
+\index{Normalizer@{Normalizer}!Normalizer@{Normalizer}}
+\index{Normalizer@{Normalizer}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{Normalizer()}{Normalizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Normalizer\+::\+Normalizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is Normalizers default constructor \mbox{\Hypertarget{classNormalizer_a5ae90bf733bda279916ef5c05a15d0c1}\label{classNormalizer_a5ae90bf733bda279916ef5c05a15d0c1}} 
+\index{Normalizer@{Normalizer}!Normalizer@{Normalizer}}
+\index{Normalizer@{Normalizer}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{Normalizer()}{Normalizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Normalizer\+::\+Normalizer (\begin{DoxyParamCaption}\item[{int}]{max }\end{DoxyParamCaption})}
+
+This is Normalizers parameterized constructor 
+\begin{DoxyParams}{Parameters}
+{\em max} & -\/ The max value that will affect normalization \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNormalizer_aaa963519038425f08b3b2ca933cd4215}\label{classNormalizer_aaa963519038425f08b3b2ca933cd4215}} 
+\index{Normalizer@{Normalizer}!get\+Max@{get\+Max}}
+\index{get\+Max@{get\+Max}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{get\+Max()}{getMax()}}
+{\footnotesize\ttfamily int Normalizer\+::get\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is Normalizers getter for the private attribute max \mbox{\Hypertarget{classNormalizer_a6063bdca1769d4f5dca7d76272344a03}\label{classNormalizer_a6063bdca1769d4f5dca7d76272344a03}} 
+\index{Normalizer@{Normalizer}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Normalizer\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 8 bit mono normalizer processing 
+
+Implements \hyperlink{classProcessor_aae6af1473510f56839f3e15328962fb0}{Processor}.
+
+\mbox{\Hypertarget{classNormalizer_aa997755adc989a2b6610cfd944824bdc}\label{classNormalizer_aa997755adc989a2b6610cfd944824bdc}} 
+\index{Normalizer@{Normalizer}!process\+Mono@{process\+Mono}}
+\index{process\+Mono@{process\+Mono}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{process\+Mono()}{processMono()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Normalizer\+::process\+Mono (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 16 bit mono normalizer processing 
+
+Implements \hyperlink{classProcessor_ab24fa87b5eb6246cf8599756b3b5862d}{Processor}.
+
+\mbox{\Hypertarget{classNormalizer_aa9d9a19237a6b208ead3a9cc96b07451}\label{classNormalizer_aa9d9a19237a6b208ead3a9cc96b07451}} 
+\index{Normalizer@{Normalizer}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Normalizer\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{unsigned char $\ast$}]{bufferL,  }\item[{unsigned char $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstract function from processor that is overidded to handle 8 bit stereo normalizer processing 
+
+Implements \hyperlink{classProcessor_a9b3db1d1810308706285c3ffd1f6d28c}{Processor}.
+
+\mbox{\Hypertarget{classNormalizer_a8a907de202a6f1173cd2ee8b7266971e}\label{classNormalizer_a8a907de202a6f1173cd2ee8b7266971e}} 
+\index{Normalizer@{Normalizer}!process\+Stereo@{process\+Stereo}}
+\index{process\+Stereo@{process\+Stereo}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{process\+Stereo()}{processStereo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Normalizer\+::process\+Stereo (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{short $\ast$}]{bufferL,  }\item[{short $\ast$}]{bufferR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the inherited abstact function from processsor that is overidded to handle 16 bit stereo normalizer processing 
+
+Implements \hyperlink{classProcessor_a705ddc9aa4c2400a30691fc9888c8e9e}{Processor}.
+
+\mbox{\Hypertarget{classNormalizer_aadfdabbf13c93c2775f99ddef9ebe6b9}\label{classNormalizer_aadfdabbf13c93c2775f99ddef9ebe6b9}} 
+\index{Normalizer@{Normalizer}!set\+Max@{set\+Max}}
+\index{set\+Max@{set\+Max}!Normalizer@{Normalizer}}
+\subsubsection{\texorpdfstring{set\+Max()}{setMax()}}
+{\footnotesize\ttfamily void Normalizer\+::set\+Max (\begin{DoxyParamCaption}\item[{int}]{n\+Max }\end{DoxyParamCaption})}
+
+This is Normalizers setter for the private attribute max\textbackslash{} 
+\begin{DoxyParams}{Parameters}
+{\em n\+Max} & -\/ The max that gets passed in \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+normalizer.\+h\item 
+normalizer.\+cpp\end{DoxyCompactItemize}

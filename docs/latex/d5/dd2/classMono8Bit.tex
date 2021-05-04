@@ -1,0 +1,77 @@
+\hypertarget{classMono8Bit}{}\section{Mono8\+Bit Class Reference}
+\label{classMono8Bit}\index{Mono8\+Bit@{Mono8\+Bit}}
+
+
+{\ttfamily \#include $<$8\+\_\+bit\+\_\+mono.\+h$>$}
+
+
+
+Inheritance diagram for Mono8\+Bit\+:
+% FIG 0
+
+
+Collaboration diagram for Mono8\+Bit\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMono8Bit_a3a5405abd5d5c1b4718161f12579ed24}{Mono8\+Bit} ()
+\item 
+\hyperlink{classMono8Bit_a6d80c16fde48f386ba940510fecf4df4}{$\sim$\+Mono8\+Bit} ()
+\item 
+unsigned char $\ast$ \hyperlink{classMono8Bit_a9239252fec82e2a816f90be56e13d9d1}{read\+Audio} (std\+::ifstream $\ast$file)
+\item 
+void \hyperlink{classMono8Bit_ad84865e5e90cf6c00382fcd5a7df620c}{write\+Audio} (std\+::ofstream $\ast$file, unsigned char $\ast$buffer)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the 8 Bit Mono Class that inherits from header Made by James Kolby 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMono8Bit_a3a5405abd5d5c1b4718161f12579ed24}\label{classMono8Bit_a3a5405abd5d5c1b4718161f12579ed24}} 
+\index{Mono8\+Bit@{Mono8\+Bit}!Mono8\+Bit@{Mono8\+Bit}}
+\index{Mono8\+Bit@{Mono8\+Bit}!Mono8\+Bit@{Mono8\+Bit}}
+\subsubsection{\texorpdfstring{Mono8\+Bit()}{Mono8Bit()}}
+{\footnotesize\ttfamily Mono8\+Bit\+::\+Mono8\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default constructor. \mbox{\Hypertarget{classMono8Bit_a6d80c16fde48f386ba940510fecf4df4}\label{classMono8Bit_a6d80c16fde48f386ba940510fecf4df4}} 
+\index{Mono8\+Bit@{Mono8\+Bit}!````~Mono8\+Bit@{$\sim$\+Mono8\+Bit}}
+\index{````~Mono8\+Bit@{$\sim$\+Mono8\+Bit}!Mono8\+Bit@{Mono8\+Bit}}
+\subsubsection{\texorpdfstring{$\sim$\+Mono8\+Bit()}{~Mono8Bit()}}
+{\footnotesize\ttfamily Mono8\+Bit\+::$\sim$\+Mono8\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMono8Bit_a9239252fec82e2a816f90be56e13d9d1}\label{classMono8Bit_a9239252fec82e2a816f90be56e13d9d1}} 
+\index{Mono8\+Bit@{Mono8\+Bit}!read\+Audio@{read\+Audio}}
+\index{read\+Audio@{read\+Audio}!Mono8\+Bit@{Mono8\+Bit}}
+\subsubsection{\texorpdfstring{read\+Audio()}{readAudio()}}
+{\footnotesize\ttfamily unsigned char $\ast$ Mono8\+Bit\+::read\+Audio (\begin{DoxyParamCaption}\item[{std\+::ifstream $\ast$}]{file }\end{DoxyParamCaption})}
+
+This function reads audio data from a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be read. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMono8Bit_ad84865e5e90cf6c00382fcd5a7df620c}\label{classMono8Bit_ad84865e5e90cf6c00382fcd5a7df620c}} 
+\index{Mono8\+Bit@{Mono8\+Bit}!write\+Audio@{write\+Audio}}
+\index{write\+Audio@{write\+Audio}!Mono8\+Bit@{Mono8\+Bit}}
+\subsubsection{\texorpdfstring{write\+Audio()}{writeAudio()}}
+{\footnotesize\ttfamily void Mono8\+Bit\+::write\+Audio (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{file,  }\item[{unsigned char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+This function writes audio data to a given fstream object. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$file} & -\/ The ifstream object of the file to be written to. \\
+\hline
+{\em $<$em$>$buffer} & -\/ The unsigned char array of audio data. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+8\+\_\+bit\+\_\+mono.\+h\item 
+8\+\_\+bit\+\_\+mono.\+cpp\end{DoxyCompactItemize}
