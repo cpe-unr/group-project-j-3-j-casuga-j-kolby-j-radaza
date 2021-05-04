@@ -15,7 +15,7 @@ unsigned char* Mono8Bit::readAudio(std::ifstream *file) {
 		std::cout << "Failed to read audio data from file." << std::endl;
 	}
 	
-	return buffer;  // gonna need a delete[] buffer later
+	return buffer;
 }
 
 void Mono8Bit::writeAudio(std::ofstream *file, unsigned char *buffer) {
