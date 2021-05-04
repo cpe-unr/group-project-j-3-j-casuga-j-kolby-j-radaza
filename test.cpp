@@ -127,7 +127,7 @@ int main() {
 	
 	// read metadata *note metadata is at the end of the file and should be read last*
 	test.readMetadata(&file);
-	std::cout << "Metadata " << test.inam << std::endl;
+	std::cout << "Metadata " << test.inam  << " end" << std::endl;
 	
 	file.close();
 	
