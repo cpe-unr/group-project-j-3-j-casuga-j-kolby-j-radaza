@@ -33,4 +33,4 @@ public:
 	void writeAudio(std::ofstream *file, unsigned char* buffer);
 };
 
-#endif
+#endif //EIGHT_BIT_MONO

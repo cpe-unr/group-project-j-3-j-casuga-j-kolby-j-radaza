@@ -1,5 +1,9 @@
 #ifndef WAVEHEADER_H
 #define WAVEHEADER_H
+/**
+ * This is the wave header struct that holds the data of the file headers
+ * Stolen from Keith Lancaster
+ */
 struct waveHeader {
 	char riff_header[4];
 	int wav_size;
@@ -17,5 +21,5 @@ struct waveHeader {
 	char data_header[4];
 	int data_bytes;
 };
-#endif
+#endif //WAVEHEADER_H
 

@@ -37,4 +37,4 @@ public:
 	 */
 	void writeAudio(std::ofstream *file, short *bufferL, short *bufferR);
 };
-#endif
+#endif //SIXTEEN_BIT_STEREO_H

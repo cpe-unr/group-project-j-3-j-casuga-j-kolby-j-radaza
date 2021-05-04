@@ -34,4 +34,4 @@ public:
 	void writeHeader(std::ofstream *file);
 };
 
-#endif
+#endif //READ_FILE_H

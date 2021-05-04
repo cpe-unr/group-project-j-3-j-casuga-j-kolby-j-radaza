@@ -37,4 +37,4 @@ public:
 	 */
 	void writeAudio(std::ofstream *file, unsigned char *bufferL, unsigned char *bufferR);
 };
-#endif
+#endif //EIGHT_BIT_STEREO

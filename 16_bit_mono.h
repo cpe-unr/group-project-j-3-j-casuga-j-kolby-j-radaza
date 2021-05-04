@@ -35,4 +35,4 @@ public:
 	void writeAudio(std::ofstream *file, short *buffer);
 };
 
-#endif
+#endif //SIXTEEN_BIT_MONO_H

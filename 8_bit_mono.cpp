@@ -9,7 +9,6 @@ unsigned char* Mono8Bit::readAudio(std::ifstream *file) {
 	unsigned char *buffer = new unsigned char[fileHeader.data_bytes];
 	
 	if (file->is_open()) {
-		//std::cout << "data bytes in 8 bit mono " << fileHeader.data_bytes << std::endl;
 		file->read((char *) buffer, fileHeader.data_bytes);
 	} else {
 		std::cout << "Failed to read audio data from file." << std::endl;
@@ -20,7 +19,6 @@ unsigned char* Mono8Bit::readAudio(std::ifstream *file) {
 
 void Mono8Bit::writeAudio(std::ofstream *file, unsigned char *buffer) {
 	if (file->is_open()) {
-		//file << buffer;
 		file->write((char *)buffer, fileHeader.data_bytes);
 	} else {
 		std::cout << "Failed to write to file." << std::endl;

@@ -31,7 +31,6 @@ void Stereo16Bit::readAudio(std::ifstream *file, short *bufferL, short *bufferR)
 
 void Stereo16Bit::writeAudio(std::ofstream *file, short *bufferL, short *bufferR) {
 	if (file->is_open()) {
-		//file << buffer;
 		file->write((char *)bufferL, (fileHeader.data_bytes/2));
 		file->write((char *)bufferL, (fileHeader.data_bytes/2));
 	} else {
