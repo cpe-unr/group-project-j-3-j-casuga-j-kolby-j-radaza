@@ -31,6 +31,9 @@ header.o: header.h header.cpp wave_header.h
 	
 16bitstereo.o: 16_bit_stereo.h 16_bit_stereo.cpp header.h wave_header.h
 	g++ -std=c++11 -c 16_bit_stereo.cpp
+
+csv.o: csv.cpp csv.h header.h
+	g++ -std=c++11 -c csv.cpp
 	
 test: test.o header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o
 	g++ -std=c++11 test.cpp header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o -o test

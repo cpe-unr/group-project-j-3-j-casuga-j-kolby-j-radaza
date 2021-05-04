@@ -2,7 +2,7 @@
 #define CSV_H
 #include "header.h"
 
-class CSV: public header /*public metadataIO*/{
+class CSV: public header, public metadataIO{
 
 std::string fileName;
 
@@ -16,7 +16,7 @@ public:
 	
 	void setFileName(std::string newFileName);
 	
-	void writeCSV(std::string file, header obj, metadataIO obj2);
+	void writeCSV(std::string fileN, std::ifstream *file, header obj, metadataIO obj2);
 
 };
 #endif //CSV_H
