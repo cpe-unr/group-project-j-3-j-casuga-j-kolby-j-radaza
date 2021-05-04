@@ -10,7 +10,8 @@ void Stereo16Bit::readAudio(std::ifstream *file, short *bufferL, short *bufferR)
 	short *R = new short;
 	
 	if (file->is_open()) {
-		std::cout << "size " << fileHeader.num_channels << std::endl;
+		//std::cout << "size " << fileHeader.num_channels << std::endl;
+		std::cout << "data bytes " << fileHeader.data_bytes << " end" << std::endl;
 		for (int i=0; i < fileHeader.data_bytes/2; i++) {
 			
 			file->read((char *) L, 1);
@@ -22,6 +23,7 @@ void Stereo16Bit::readAudio(std::ifstream *file, short *bufferL, short *bufferR)
 			//std::cout << "Left " << L << bufferL[2*i-1] << std::endl;
 			//std::cout << "Right " << R << bufferR[2*i-1] << std::endl;
 		}
+		//std::cout << "L[50] in 16.cpp " << 
 		delete L;
 		delete R;
 	} else {

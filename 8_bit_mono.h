@@ -2,13 +2,12 @@
 #define EIGHT_BIT_MONO
 #include <fstream>
 #include "header.h"
-#include "metadata_io.h"
 /**
  * This is the 8 Bit Mono Class that inherits from header
  * Made by James Kolby
  */
-//public metadataIO,
-class Mono8Bit :  public header {
+
+class Mono8Bit : public header, public metadataIO {
 public:
 	/**
  	* This is the default constructor.
