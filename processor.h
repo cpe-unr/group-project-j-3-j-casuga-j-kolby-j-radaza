@@ -17,12 +17,11 @@ public:
 
 	/**
 	 * This function is abstrac and virtual to allow child classes to inherit the method to handle 8 Bit Stereo.
-	 * @param sizeL - The size of the left side array
-	 * @param sizeR - The size of the right side array
+	 * @param sizeL - The size of the array
 	 * @param bufferL - An unsigned char pointer that points to the left side array
 	 * @param bufferR - An unsigned char pointer that points to the right side array 
 	 */
-	virtual void processStereo(int sizeL, int sizeR, unsigned char* bufferL, unsigned char* bufferR) = 0;
+	virtual void processStereo(int size, unsigned char* bufferL, unsigned char* bufferR) = 0;
 	
 	/**
 	 * This function is abstract and virtual to allow child classes to inherit the method to handle 16 Bit Mono.
@@ -33,12 +32,11 @@ public:
 	
 	/**
 	 * This function is abstract and virtual to allow child classes to inherit the method to handle 16 Bit Stereo.
-	 * @param sizeL - The size of the left side array
-	 * @param sizeR - The size of the right side array
+	 * @param sizeL - The size of the array
 	 * @param bufferL - An unsigned char pointer that points to the left side array
 	 * @param bufferR - An unsigned char pointer that points to the right side array 
 	 */
-	virtual void processStereo(int sizeL, int sizeR, short* bufferL, short* bufferR) = 0;
+	virtual void processStereo(int size, short* bufferL, short* bufferR) = 0;
 
 };
 
