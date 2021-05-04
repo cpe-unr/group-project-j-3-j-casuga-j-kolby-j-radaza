@@ -6,7 +6,6 @@
 #include "16_bit_mono.h"
 #include "16_bit_stereo.h"
 #include "header.h"
-#include "metadata_io.h"
 
 int main() {
 // 8 bit mono
@@ -101,6 +100,7 @@ int main() {
 	*/
 
 // 16 bit stereo
+
 	std::string fileName = "waves/yes-16-bit-stereo.wav";
 	std::ifstream file (fileName, std::ios::binary | std::ios::in);
 	
