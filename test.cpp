@@ -139,9 +139,11 @@ int main() {
 
 	//This format is how to get the CSV file written. In this case the variable files should be the name of the the CSV file with the .CSV at the end. file should be an ifstream variable as shown above this code. Test should be the object that is created by any of the subclasses 8bit 16 bit etc. io is just a new metadataIO object.
 	CSV csv;
-	std::string files = "16bitCSV.CSV";
+	std::string files;
+	std::cout << "CSV File name: "; std::cin >> files;
 	metadataIO io;
 	csv.writeCSV(files, &file, test, io);
+
 
 	file.close();
 	
@@ -158,5 +160,28 @@ int main() {
 	delete bufferL;
 	delete bufferR;
 	
+	CSV csv1;
+	std::string file1;
+	std::cout << "CSV File name: "; std::cin >> file1;
+	metadataIO io1;
+	csv.writeCSV(file1, &mono_8_origin, mono_8_waveFile, io1);
+
+	CSV csv2;
+	std::string file2;
+	std::cout << "CSV File name: "; std::cin >> file2;
+	metadataIO io2;
+	csv.writeCSV(file2, &stereo_8_origin, stereo_8_wavFile, io2);
+
+	CSV csv3;
+	std::string file3;
+	std::cout << "CSV File name: "; std::cin >> file3;
+	metadataIO io3;
+	csv.writeCSV(file3, &mono_16_origin, mono_16_wavFile, io3);
+
+	CSV csv4;
+	std::string file4;
+	std::cout << "CSV File name: "; std::cin >> file4;
+	metadataIO io4;
+	csv.writeCSV(file4, &stereo_16_origin, stereo_16_wavFile, io4);
 }
 
