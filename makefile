@@ -1,5 +1,5 @@
-project: main.o libprocessor.a menu.o header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o
-	g++ -std=c++11 main.o libprocessor.a header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o -o processor
+project: main.o libprocessor.a menu.o header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o csv.o
+	g++ -std=c++11 main.o libprocessor.a header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o csv.o -o processor
 
 main.o: main.cpp
 	g++ -std=c++11 -c main.cpp
@@ -39,9 +39,6 @@ header.o: header.h header.cpp wave_header.h
 csv.o: csv.cpp csv.h header.h
 	g++ -std=c++11 -c csv.cpp
 	
-test: test.o header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o csv.o
-	g++ -std=c++11 test.cpp header.o 8_bit_mono.o 8_bit_stereo.o 16_bit_mono.o 16_bit_stereo.o csv.o -o test
-
 
 
 clean:
