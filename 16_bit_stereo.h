@@ -2,7 +2,6 @@
 #define SIXTEEN_BIT_STEREO_H
 #include <fstream>
 #include "header.h"
-#include "metadata_io.h"
 /**
  * This is the 16 Bit Stereo Class that inherits from header
  * Made by James Kolby

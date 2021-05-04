@@ -3,6 +3,8 @@
 #include "wave_header.h"
 #include "header.h"
 
+
+// header implementation
 header::header () {}
 header::~header () {}
 
@@ -19,5 +21,26 @@ void header::writeHeader(std::ofstream *file) {
 		file->write((char *)&fileHeader, sizeof(fileHeader));
 	} else {
 		std::cout << "Cannot write file header" << std::endl;
+	}
+}
+
+
+// metadata implemendation
+metadataIO::metadataIO () {}
+metadataIO::~metadataIO () {}
+
+void metadataIO::readMetadata(std::ifstream *file) {
+	if (file->is_open()) {
+		file->read((char *) &Metadata, sizeof(Metadata));
+	} else {
+		std::cout << "Failed to read metadata from file" <<std::endl;
+	}
+}
+
+void metadataIO::writeMetadata(std::ofstream *file) {
+	if (file->is_open()) {
+		file->write((char *)&Metadata, sizeof(Metadata));
+	} else {
+		std::cout << "Cannot write metadata to file" << std::endl;
 	}
 }
