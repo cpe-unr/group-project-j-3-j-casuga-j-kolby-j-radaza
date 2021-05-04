@@ -6,6 +6,7 @@
 #include "16_bit_mono.h"
 #include "16_bit_stereo.h"
 #include "header.h"
+#include "csv.h"
 
 int main() {
 // 8 bit mono
@@ -133,7 +134,10 @@ int main() {
 	std::cout << "size of metadata " << sizeof(test.inam) << std::endl;
 	std::cout << "Metadata " << test.inam  << " end" << std::endl;
 	*/
-	
+	CSV csv;
+	std::string files = "16bitCSV.txt";
+	metadataIO io;
+	csv.writeCSV(files, &file, test, io);
 	file.close();
 	
 	

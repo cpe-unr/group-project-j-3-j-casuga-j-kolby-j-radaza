@@ -20,7 +20,7 @@ using namespace std;
 		fileName = file;
 	}
 	
-	void CSV::writeCSV(string fileN, ifstream *file, header obj, metadataIO obj2){
+	void CSV::writeCSV(string fileN, ifstream *file, header obj, metadataIO& obj2){
 	
 		obj.readHeader(file);
 		obj2.readMetadata(file);
