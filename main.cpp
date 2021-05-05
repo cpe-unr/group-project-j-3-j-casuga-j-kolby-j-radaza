@@ -3,8 +3,6 @@
 #include <fstream>
 #include <string>
 
-
-
 #include "echo.h"
 #include "noise_gate.h"
 #include "normalizer.h"
@@ -16,16 +14,34 @@
 #include "8_bit_stereo.h"
 #include "16_bit_mono.h"
 #include "16_bit_stereo.h"
-#include "csv.h"
+
+
+/**
+ * \brief   The function bar.
+ *
+ * \details This function does something which is doing nothing. So this text
+ *          is totally senseless and you really do not need to read this,
+ *          because this text is basically saying nothing.
+ *
+ * \note    This text shall only show you, how such a \"note\" section
+ *          is looking. There is nothing which really needs your notice,
+ *          so you do not really need to read this section.
+ *
+ * \param[in]     a    Description of parameter a.
+ * \param[out]    b    Description of the parameter b.
+ * \param[in,out] c    Description of the parameter c.
+ *
+ * \return        The error return code of the function.
+ *
+ * \retval        ERR_SUCCESS    The function is successfully executed
+ * \retval        ERR_FAILURE    An error occurred
+ */
 void fn() {
 
 }
 
 
 int main() {
-
-	//READING OF WAV FILES
-
 
 	/**
 	*	This reads in the 8-bit mono wav file
@@ -41,9 +57,6 @@ int main() {
 	mono_8_wavFile.readHeader(&mono_8_origin);
 	unsigned char*  mono_8_buffer = mono_8_wavFile.readAudio(&mono_8_origin);
 	mono_8_origin.close();
-
-
-
 
 
 	/**
@@ -99,13 +112,14 @@ int main() {
 	short *stereo_16_buffer_R = new short[stereo_16_wavFile.fileHeader.data_bytes];
 
 	stereo_16_origin.close();
-	
 
+
+	std::cout << " ----- Welcome to the Audio File Management System ----- " << std::endl;
 
 	int choice = 0;
+	bool processStatus = false;
 
 	do {
-		std::cout << " ----- Welcome to the Audio File Management System ----- " << std::endl;
 		std::cout << " Which file are we working with today? (Input the number) " << std::endl;
 
 		std::cout << "[1] 8-bit mono" << std::endl;
@@ -122,86 +136,131 @@ int main() {
 		switch (choice) {
 		case 0:
 			std::cout << "Thank you for using our program. Till we meet again!" << std::endl;
+			processStatus == false
 			break;
 
-		// 8-bit MONO
-		case 1:{
-			Menu<Mono8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&mono_8_wavFile,mono_8_name, mono_8_buffer);
-			
-			int x1;
-			std::cout << "Would you like to make a CSV file?" << std::endl << "[0] No" << std::endl << "[1] Yes" << std::endl;
-			std::cin >> x1;
-			if(x1 == 1){
-				CSV csv1;
-				std::string file1;
-				std::cout << "CSV File name ending with .CSV: "; std::cin >> file1;
-				metadataIO io1;
-				csv1.writeCSV(file1, &mono_8_origin, mono_8_wavFile, io1);
-			}
-			else{
-			}
+		case 1: {
+			Menu<Mono8Bit, unsigned char*, unsigned char*, unsigned char*> menu(&mono_8_wavFile, mono_8_name, mono_8_buffer);
+			processStatus = menu.returnProcessStatus();
 			break;
 		}
 
-		case 2:{
-			Menu<Stereo8Bit,unsigned char*, unsigned char*, unsigned char*> menu(&stereo_8_wavFile,stereo_8_name, stereo_8_buffer_L, stereo_8_buffer_R);
-
-			int x2;
-			std::cout << "Would you like to make a CSV file?" << std::endl << "[0] No" << std::endl << "[1] Yes" << std::endl;
-			std::cin >> x2;
-			if(x2 == 1){
-				CSV csv2;
-				std::string file2;
-				std::cout << "CSV File name ending with .CSV: "; std::cin >> file2;
-				metadataIO io2;
-				csv2.writeCSV(file2, &stereo_8_origin, stereo_8_wavFile, io2);
-			}
-			else{
-			}
-			break;
-		}
-		case 3:{
-			Menu<Mono16Bit,short*, short*, short*> menu(&mono_16_wavFile,mono_16_name, mono_16_buffer);
-
-			int x3;
-			std::cout << "Would you like to make a CSV file?" << std::endl << "[0] No" << std::endl << "[1] Yes" << std::endl;
-			std::cin >> x3;
-			if(x3 == 1){
-				CSV csv3;
-				std::string file3;
-				std::cout << "CSV File name ending with .CSV: "; std::cin >> file3;
-				metadataIO io3;
-				csv3.writeCSV(file3, &mono_16_origin, mono_16_wavFile, io3);
-			}
-			else{
-			}
+		case 2: {
+			Menu<Stereo8Bit, unsigned char*, unsigned char*, unsigned char*> menu(&stereo_8_wavFile, stereo_8_name, stereo_8_buffer_L, stereo_8_buffer_R);
+			processStatus = menu.returnProcessStatus();
 			break;
 		}
 
-		case 4:{
-			  Menu<Stereo16Bit,short*, short*, short*> menu(&stereo_16_wavFile,stereo_16_name, stereo_16_buffer_L, stereo_16_buffer_R);
 
-			int x4;
-			std::cout << "Would you like to make a CSV file?" << std::endl << "[0] No" << std::endl << "[1] Yes" << std::endl;
-			std::cin >> x4;
-			if(x4 == 1){
-				CSV csv4;
-				std::string file4;
-				std::cout << "CSV File name ending with .CSV: "; std::cin >> file4;
-				metadataIO io4;
-				csv4.writeCSV(file4, &stereo_16_origin, stereo_16_wavFile, io4);
-			}
-			else{
-			}
+		case 3: {
+			Menu<Mono16Bit, short*, short*, short*> menu(&mono_16_wavFile, mono_16_name, mono_16_buffer);
+			processStatus = menu.returnProcessStatus();
 			break;
 		}
 
-		default:{
+		case 4: {
+			Menu<Stereo16Bit, short*, short*, short*> menu(&stereo_16_wavFile, stereo_16_name, stereo_16_buffer_L, stereo_16_buffer_R);
+			processStatus = menu.returnProcessStatus();
+			break;
+		}
+
+		default:
 			std::cout << "Please enter a valid option" << std::endl;
 			break;
 		}
 
-	    }
-	} while (choice != 0); 
+
+	} while (processStatus == false); // change this to when the bool flag for process done is over.
+
+
+	//Modify MetaData
+
+	//Process wavfiles
+
+	//Export into CSV file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	std::string chosenWavFile;
+
+	//////////////// Read in the wav files
+
+
+
+	// write file
+	/**
+	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
+
+	test.writeHeader(&outfile);
+	test.writeAudio(&outfile, buffer);
+	file.close();
+	**/
+
+	///////////////
+
+
+
+
+
+
+
+	// PROCESS FOR ECHO
+
+	/**
+
+
+
+
+	//WRITTEN INTO ANOTHER FILE (NEW)
+	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
+
+	test.writeHeader(&outfile);
+	test.writeAudio(&outfile, buffer);
+	file.close();
+
+	**/
+	// TESTING ON 8-BIT MONO
+	//ECHO
+
+
+
+
+
+
+
+
+	//Menu menu();
+
+
+
+
+
+
+
+
+
 	return 0;
 }

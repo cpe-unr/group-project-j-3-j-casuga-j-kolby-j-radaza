@@ -11,6 +11,11 @@
 #include "normalizer.h"
 #include "header.h"
 
+/**
+ * This is the template Menu Class that handles the Graphical User Interface
+ * Made by Jazzel Radaza
+ */
+
 
 template <class T, class U, class L, class R>
 class Menu {
@@ -20,6 +25,7 @@ private:
 	U buffer;
 	L bufferL;
 	R bufferR;
+	bool processDone = false;
 
 	std::string name;
 	std::string user_processes;
@@ -63,24 +69,31 @@ public:
 	*/
 	void normalizerProcessor();
 
-
-
+	/**
+	* This function returns the status of processDone when user is done with processing
+	*/
+	bool returnProcessStatus();
 
 };
 
+template <class T, class U, class L, class R>
+bool Menu<T, U, L, R>::returnProcessStatus() {
+	return processDone;
+
+};
 
 template <class T, class U, class L, class R>
 void Menu<T, U, L, R>::echoProcessor() {
 	if (name == "8-bit mono wav file" || name == "16-bit mono wav file") {
 		Processor *processorEcho = new Echo(15);
 		processorEcho-> processMono(wavFile.fileHeader.data_bytes, buffer);
-		std::cout << "SUCCESS ECHO " << name << std::endl;
+		std::cout << "Your " << name << " has been successfully processed through the Echo processor" << std::endl;
 	}
 
 	if (name == "8-bit stereo wav file" || name == "16-bit stereo wav file") {
 		Processor *processorEcho = new Echo(15);
 		processorEcho -> processStereo(wavFile.fileHeader.data_bytes, bufferL, bufferR);
-		std::cout << "SUCCESS ECHO " << name << std::endl;
+		std::cout << "Your " << name << " has been successfully processed through the Echo processor" << std::endl;
 	}
 
 };
@@ -91,13 +104,13 @@ void Menu<T, U, L, R>::noise_gateProcessor() {
 	if (name == "8-bit mono wav file" || name == "16-bit mono wav file") {
 		Processor *processorEcho = new NoiseGate(0.05);
 		processorEcho-> processMono(wavFile.fileHeader.data_bytes, buffer);
-		std::cout << "SUCCESS NOISE GATE " << name << std::endl;
+		std::cout << "Your " << name << " has been successfully processed through the Noise Gate processor" << std::endl;
 	}
 
 	if (name == "8-bit stereo wav file" || name == "16-bit stereo wav file") {
 		Processor *processorEcho = new NoiseGate(0.05);
 		processorEcho -> processStereo(wavFile.fileHeader.data_bytes, bufferL, bufferR);
-		std::cout << "SUCCESS NOISE GATE " << name << std::endl;
+		std::cout << "Your " << name << " has been successfully processed through the Noise Gate processor" << std::endl;
 	}
 
 };
@@ -108,13 +121,13 @@ void Menu<T, U, L, R>::normalizerProcessor() {
 	if (name == "8-bit mono wav file" || name == "16-bit mono wav file") {
 		Processor *processorEcho = new Normalizer();
 		processorEcho-> processMono(wavFile.fileHeader.data_bytes, buffer);
-		std::cout << "SUCCESS NORMALIZER " << name << std::endl;
+		std::cout << "Your " << name << " has been successfully processed through the Normalizer processor" << std::endl;
 	}
 
 	if (name == "8-bit stereo wav file" || name == "16-bit stereo wav file") {
 		Processor *processorEcho = new Normalizer();
 		processorEcho -> processStereo(wavFile.fileHeader.data_bytes, bufferL, bufferR);
-		std::cout << "SUCCESS NORMALIZER " << name << std::endl;
+		std::cout << "Your " << name << " has been successfully processed through the Normalizer processor" << std::endl;
 	}
 };
 
@@ -160,6 +173,18 @@ void Menu<T, U, L, R>::processFile() {
 		if (x == 3)
 			normalizerProcessor();
 	}
+	// prompt the user to write and save the file
+
+	std::cout << "Would you like to process more audio files?" << std::endl;
+	std::cout << "[1] Yes" << std::endl;
+	std::cout << "[0] Exit program" << std::endl;
+
+
+	int choice;
+	std::cout << "Enter choice: "; std::cin >> choice;
+	if(choice==0)
+		processDone=true;
+
 };
 
 
