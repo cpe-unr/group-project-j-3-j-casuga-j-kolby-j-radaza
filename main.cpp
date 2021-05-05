@@ -19,28 +19,6 @@
 #include "16_bit_mono.h"
 #include "16_bit_stereo.h"
 
-
-
-/**
- * \brief   The function bar.
- *
- * \details This function does something which is doing nothing. So this text
- *          is totally senseless and you really do not need to read this,
- *          because this text is basically saying nothing.
- *
- * \note    This text shall only show you, how such a \"note\" section
- *          is looking. There is nothing which really needs your notice,
- *          so you do not really need to read this section.
- *
- * \param[in]     a    Description of parameter a.
- * \param[out]    b    Description of the parameter b.
- * \param[in,out] c    Description of the parameter c.
- *
- * \return        The error return code of the function.
- *
- * \retval        ERR_SUCCESS    The function is successfully executed
- * \retval        ERR_FAILURE    An error occurred
- */
 bool processStatus = false;
 
 void fn() {
@@ -266,87 +244,6 @@ int main() {
 
 	} while (processStatus == false); // change this to when the bool flag for process done is over.
 
-
-	//Modify MetaData
-
-	//Process wavfiles
-
-	//Export into CSV file
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	std::string chosenWavFile;
-
-	//////////////// Read in the wav files
-
-
-
-	// write file
-	/**
-	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
-
-	test.writeHeader(&outfile);
-	test.writeAudio(&outfile, buffer);
-	file.close();
-	**/
-
-	///////////////
-
-
-
-
-
-
-
-	// PROCESS FOR ECHO
-
-	/**
-
-
-
-
-	//WRITTEN INTO ANOTHER FILE (NEW)
-	std::ofstream outfile ("waves/outfile.wav", std::ios::binary | std::ios::out);
-
-	test.writeHeader(&outfile);
-	test.writeAudio(&outfile, buffer);
-	file.close();
-
-	**/
-	// TESTING ON 8-BIT MONO
-	//ECHO
-
-
-
-
-
-
-
-
-	//Menu menu();
 
 
 
