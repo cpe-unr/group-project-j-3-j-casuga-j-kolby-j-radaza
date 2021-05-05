@@ -1,4 +1,8 @@
 /** @file */
+/**
+* This is the main file that is responsible for handling all of the processes of the Audio File Management System
+* Implemented by Jazzel Radaza
+*/
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,6 +18,7 @@
 #include "8_bit_stereo.h"
 #include "16_bit_mono.h"
 #include "16_bit_stereo.h"
+
 
 
 /**
@@ -36,12 +41,31 @@
  * \retval        ERR_SUCCESS    The function is successfully executed
  * \retval        ERR_FAILURE    An error occurred
  */
+bool processStatus = false;
+
 void fn() {
 
 }
 
+void continueProcess() {
+	std::cout << "Would you like to process more audio files?" << std::endl;
+	std::cout << "[1] Yes" << std::endl;
+	std::cout << "[0] No. Exit program" << std::endl;
+
+
+	int choice;
+	std::cout << "Enter choice: "; std::cin >> choice;
+	if (choice == 0)
+		processStatus = true;
+
+}
 
 int main() {
+
+	std::string fileName_8_mono = "yes-8-bit-mono";
+	std::string fileName_8_stereo = "yes-8-bit-stereo";
+	std::string fileName_16_mono = "yes-16-bit-mono";
+	std::string fileName_16_stereo = "yes-16-bit-stereo";
 
 	/**
 	*	This reads in the 8-bit mono wav file
@@ -117,7 +141,7 @@ int main() {
 	std::cout << " ----- Welcome to the Audio File Management System ----- " << std::endl;
 
 	int choice = 0;
-	bool processStatus = false;
+
 
 	do {
 		std::cout << " Which file are we working with today? (Input the number) " << std::endl;
@@ -136,31 +160,101 @@ int main() {
 		switch (choice) {
 		case 0:
 			std::cout << "Thank you for using our program. Till we meet again!" << std::endl;
-			processStatus == false
+			processStatus = false;
 			break;
 
 		case 1: {
 			Menu<Mono8Bit, unsigned char*, unsigned char*, unsigned char*> menu(&mono_8_wavFile, mono_8_name, mono_8_buffer);
-			processStatus = menu.returnProcessStatus();
+			std::cout << "\n \nCongratulations on successfully processing your audio files.It is now time to save our changes." << std::endl;
+			std::string newFileName;
+
+			do {
+				std::cout << "\nPlease enter a file name for your new audio file: ";
+				std::getline(std::cin, newFileName);
+				if ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo))
+					std::cout << "Please choose a different file name" << std::endl;
+				else {
+					std::string fileName = "waves/" + newFileName + ".wav";
+					std::ofstream outfile (fileName, std::ios::binary | std::ios::out);
+					mono_8_wavFile.writeHeader(&outfile);
+					mono_8_wavFile.writeAudio(&outfile, mono_8_buffer);
+					mono_8_origin.close();
+				}
+
+			} while ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo));
+			continueProcess();
 			break;
 		}
 
 		case 2: {
 			Menu<Stereo8Bit, unsigned char*, unsigned char*, unsigned char*> menu(&stereo_8_wavFile, stereo_8_name, stereo_8_buffer_L, stereo_8_buffer_R);
-			processStatus = menu.returnProcessStatus();
+			std::cout << "\n \nCongratulations on successfully processing your audio files.It is now time to save our changes." << std::endl;
+			std::string newFileName;
+
+			do {
+				std::cout << "\nPlease enter a file name for your new audio file: ";
+				std::getline(std::cin, newFileName);
+				if ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo))
+					std::cout << "Please choose a different file name" << std::endl;
+				else {
+					std::string fileName = "waves/" + newFileName + ".wav";
+					std::ofstream outfile (fileName, std::ios::binary | std::ios::out);
+					stereo_8_wavFile.writeHeader(&outfile);
+					stereo_8_wavFile.writeAudio(&outfile, stereo_8_buffer_L, stereo_8_buffer_R);
+					stereo_8_origin.close();
+				
+				}
+
+			} while ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo));
+			continueProcess();
 			break;
 		}
 
 
 		case 3: {
 			Menu<Mono16Bit, short*, short*, short*> menu(&mono_16_wavFile, mono_16_name, mono_16_buffer);
-			processStatus = menu.returnProcessStatus();
+			std::cout << "\n \nCongratulations on successfully processing your audio files.It is now time to save our changes." << std::endl;
+			std::string newFileName;
+
+			do {
+				std::cout << "\nPlease enter a file name for your new audio file: ";
+				std::getline(std::cin, newFileName);
+				if ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo))
+					std::cout << "Please choose a different file name" << std::endl;
+				else {
+					std::string fileName = "waves/" + newFileName + ".wav";
+					std::ofstream outfile (fileName, std::ios::binary | std::ios::out);
+					mono_16_wavFile.writeHeader(&outfile);
+					mono_16_wavFile.writeAudio(&outfile, mono_16_buffer);
+					mono_16_origin.close();
+				}
+
+			} while ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo));
+			continueProcess();
 			break;
 		}
 
 		case 4: {
 			Menu<Stereo16Bit, short*, short*, short*> menu(&stereo_16_wavFile, stereo_16_name, stereo_16_buffer_L, stereo_16_buffer_R);
-			processStatus = menu.returnProcessStatus();
+			std::cout << "\n \nCongratulations on successfully processing your audio files.It is now time to save our changes." << std::endl;
+			std::string newFileName;
+
+			do {
+				std::cout << "\nPlease enter a file name for your new audio file: ";
+				std::getline(std::cin, newFileName);
+				if ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo))
+					std::cout << "Please choose a different file name" << std::endl;
+				else {
+					std::string fileName = "waves/" + newFileName + ".wav";
+					std::ofstream outfile (fileName, std::ios::binary | std::ios::out);
+					stereo_16_wavFile.writeHeader(&outfile);
+					stereo_16_wavFile.writeAudio(&outfile, stereo_16_buffer_L, stereo_16_buffer_R);
+					stereo_16_origin.close();
+				
+				}
+
+			} while ((newFileName == fileName_8_mono) || (newFileName == fileName_8_stereo) || (newFileName == fileName_16_mono) || (newFileName == fileName_16_stereo));
+			continueProcess();
 			break;
 		}
 
